@@ -1,0 +1,29 @@
+:root {
+    --noir: black;
+    --blanc: white;
+    --gris: #D9D9D9;
+    --mauve: #6060E5;
+    --or: #EBB200;
+    --font-principale: 'Staatliches';
+    --font-secondaire: 'DancingScript';
+  }
+
+  @font-face {
+    font-family: 'DancingScript';
+    src: url(../assets/police/DancingScript.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Staatliches';
+    src: url(../assets/police/Staatliches.ttf) format('truetype');
+  }
+
+  html {
+    font-family: 'Staatliches';
+    background-color: var(--noir)
+  }
+
+
+
+  /*----- Styles Généraux -----*/
+  /*------ Section Hero ------*/
