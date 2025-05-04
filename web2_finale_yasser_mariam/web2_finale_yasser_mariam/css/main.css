@@ -138,6 +138,65 @@ body {
 .logo:hover {
   transform: scale(1.05);
 }
+/* Import de la police Staatliches */
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+/* Conteneur du footer */
+footer {
+  background-color: #EBB200;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* ou center selon l'alignement voulu */
+  padding: 20px;
+  font-family: 'Staatliches', cursive;
+  color: #000; /* Couleur par défaut du texte */
+}
+
+/* Section de gauche avec séparateur */
+footer .left {
+  padding-right: 20px;
+  border-right: 2px solid #444; /* ligne verticale */
+}
+
+/* Boutons mauves */
+footer .btn-mauve {
+  background-color: #6a0dad;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 5px 0;
+  text-decoration: none; /* si ce sont des liens */
+  display: inline-block; /* pour ajouter margin */
+}
+
+/* Boutons gris clair */
+footer .btn-gris {
+  background-color: #DDD;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 5px 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Section de droite (adresse) */
+footer .right {
+  padding-left: 20px;
+}
+
+/* Paragraphe adresse (optionnel) */
+footer .right p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Icônes sociales (image) */
+.socials .sc {
+  border-radius: 100px; 
+}
 
 
 
