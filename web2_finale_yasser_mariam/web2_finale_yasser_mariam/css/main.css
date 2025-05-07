@@ -162,6 +162,7 @@ footer .left {
 footer .btn-mauve {
   background-color: #6a0dad;
   color: #fff;
+  box-shadow:0px 4px 20px   #000 ;
   border: none;
   border-radius: 20px;
   padding: 8px 15px;
@@ -169,19 +170,26 @@ footer .btn-mauve {
   text-decoration: none; /* si ce sont des liens */
   display: inline-block; /* pour ajouter margin */
 }
-
-/* Boutons gris clair */
-footer .btn-gris {
-  background-color: #DDD;
+/*hover du btn-mauve */
+footer .btn-mauve:hover {
+  background-color: #570b8d;
+}
+/* Boutons gris jaune */
+footer .btn-jaune {
+  background-color: #EBB200;
   color: #000;
   border: none;
+  box-shadow:0px 4px 20px   #6a0dad ;
   border-radius: 20px;
   padding: 8px 15px;
   margin: 5px 0;
   text-decoration: none;
   display: inline-block;
 }
-
+/*hover du btn-jaune */
+footer .btn-jaune:hover {
+  background-color: #dda600;
+}
 /* Section de droite (adresse) */
 footer .right {
   padding-left: 20px;
