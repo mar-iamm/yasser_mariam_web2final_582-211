@@ -1,0 +1,212 @@
+/* ============================================= */
+/* == STYLES FOR "À PROPOS DE CIBL" SECTION == */
+/* ============================================= */
+
+/* Main container for the "À Propos" section, based on Inspector Image 1 */
+.apropos-cibl-section-container {
+    width: 100%; /* Occupy available width within main */
+    max-width: 1440px; /* Max width from inspector */
+    /* height: 1484px; /* From inspector - often better to let content define height or use min-height */
+    min-height: 800px; /* Example: adjust as needed */
+    background: var(--noir); /* #000 from inspector */
+    margin: 40px auto; /* Center it on the page if <main> allows, and add some vertical space */
+    display: flex;
+    flex-direction: column;
+    /* The overall body background is var(--noir) via html tag, so this container will blend
+       unless <main> has a different background or there's body padding. */
+}
+
+/* Top Yellow Banner: "À Propos de cibl", based on Inspector Image 6 & 7 */
+.apropos-cibl-section-container .banner-propos { /* Increased specificity */
+    display: flex;
+    /* width: 1440px; Should be 100% of its parent .apropos-cibl-section-container */
+    width: 100%;
+    height: 106px; /* From inspector */
+    /* Padding from inspector: 13px 565px 13px 481px;
+       These large L/R paddings are for precise text positioning within a 1440px fixed design.
+       For a more flexible approach, you might center the text child.
+       Let's try to apply them but be mindful of smaller screens.
+    */
+    padding: 13px 0; /* Vertical padding */
+    align-items: center;
+    justify-content: center; /* This will center the .title-propos if its width is less than banner */
+    background: var(--or); /* #EBB200 from inspector */
+    box-sizing: border-box;
+    flex-shrink: 0; /* From inspector */
+}
+
+.apropos-cibl-section-container .banner-propos .title-propos { /* Increased specificity */
+    width: 394px; /* From inspector */
+    height: 80px; /* From inspector */
+    flex-shrink: 0; /* From inspector */
+    color: var(--noir); /* #000 from inspector */
+    font-family: var(--font-principale); /* Staatliches from inspector */
+    font-size: 64px; /* From inspector */
+    font-style: normal;
+    font-weight: 400; /* Staatliches is often 400 weight */
+    line-height: 80px; /* To vertically center in its own height */
+    margin: 0;
+    text-align: center; /* Explicitly center text within this block */
+}
+
+/* Content Area for the grid (with vinyl background) */
+.apropos-cibl-section-container .content-area-apropos { /* Increased specificity */
+    padding: 50px 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Takes up remaining space if .apropos-cibl-section-container has fixed height */
+    
+    /* === Replace with your actual vinyl image path === */
+    background-image: url('../assets/images/vinyl-background-faint.png'); /* ADJUST PATH! */
+    background-size: contain; /* Or 'cover', depending on image proportions and desired effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* To make it "faint" if the image itself isn't already, you can apply opacity to a pseudo-element
+       or ensure the image file itself is semi-transparent. Applying opacity here would affect text too.
+       Example using a pseudo-element (more complex):
+    */
+    /* position: relative; */
+}
+/*
+.apropos-cibl-section-container .content-area-apropos::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../assets/images/vinyl-background.png'); // ADJUST PATH!
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; // Adjust for faintness
+    z-index: -1; // Place behind content
+}
+*/
+
+
+.apropos-cibl-section-container .info-grid-apropos { /* Increased specificity */
+    display: grid;
+    /* For a 2x2 grid as shown in the full image */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, auto);
+    gap: 50px 80px; /* row-gap column-gap - adjust to match visual */
+    width: 100%;
+    max-width: 950px; /* Adjust to control overall width of the grid and spacing */
+    z-index: 1; /* Ensure grid is above pseudo-element background if used */
+}
+
+/* Styling for individual grid items and their titles, based on Inspector Images 2-5 */
+.apropos-cibl-section-container .grid-item-apropos { /* Increased specificity */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.apropos-cibl-section-container .grid-item-title-apropos { /* Increased specificity */
+    color: var(--blanc); /* #FFF from inspector */
+    font-family: var(--font-principale); /* Staatliches from inspector */
+    font-size: 48px; /* From inspector */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2; /* Or 'normal' from inspector */
+    margin: 0 0 15px 0; /* Space below title, above image */
+}
+
+.apropos-cibl-section-container .grid-item-image { /* Increased specificity */
+    display: block; 
+    object-fit: cover; /* Ensure image covers dimensions without distortion */
+    border: 1px solid #333; /* Optional subtle border if images blend too much */
+    flex-shrink: 0; /* From inspector layout details of similar elements */
+}
+
+/* Specific image dimensions from inspector data (Images 2, 3, 4, 5 "Layout" section) */
+/* These are applied to the <img> tags directly */
+.apropos-cibl-section-container .histoire-image,
+.apropos-cibl-section-container .conseil-image,
+.apropos-cibl-section-container .mission-image {
+    width: 357px; /* From inspector */
+    height: 201px; /* From inspector */
+    /* aspect-ratio: 119/67; /* Already defined by width/height */
+}
+
+.apropos-cibl-section-container .comite-image {
+    width: 367px; /* From inspector */
+    height: 207px; /* From inspector */
+    /* aspect-ratio: 367/207; /* Already defined by width/height */
+}
+
+/* Bottom Yellow Banner: "Où nous écouter", based on Inspector Image 8 & 9 */
+.apropos-cibl-section-container .banner-ecouter-apropos { /* Increased specificity */
+    display: flex;
+    width: 100%; /* 100% of its parent .apropos-cibl-section-container */
+    /* height set by content and padding, or specific if needed from inspector (not directly given for banner, but for text inside) */
+    /* Padding from inspector: 27px 1068px 0px 33px;
+       Again, large L/R paddings. 0px bottom padding can look odd.
+       Let's use simpler padding and align text.
+    */
+    padding: 27px 33px; /* Symmetrical vertical, left padding from inspector */
+    align-items: center;
+    justify-content: flex-start; /* Align text to the left */
+    background: var(--or); /* #EBB200 from inspector */
+    box-sizing: border-box;
+    flex-shrink: 0; /* Not explicitly in inspector for this banner but good practice */
+}
+
+.apropos-cibl-section-container .banner-ecouter-apropos .title-ecouter-apropos { /* Increased specificity */
+    width: 339px; /* From inspector */
+    height: 96px; /* From inspector */
+    flex-shrink: 0; /* From inspector */
+    color: var(--blanc); /* #FFF from inspector */
+    font-family: var(--font-principale); /* Staatliches from inspector */
+    font-size: 40px; /* From inspector */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2; /* Or 'normal' or 96px to fill height */
+    margin: 0;
+    display: flex; /* To allow vertical alignment if needed */
+    align-items: center; /* Vertically center text if line-height < height */
+}
+
+/* Responsive adjustments for the grid */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .apropos-cibl-section-container .info-grid-apropos {
+        gap: 30px 40px;
+        max-width: 700px;
+    }
+    .apropos-cibl-section-container .histoire-image,
+    .apropos-cibl-section-container .conseil-image,
+    .apropos-cibl-section-container .mission-image,
+    .apropos-cibl-section-container .comite-image {
+        width: 100%; /* Allow images to scale down */
+        max-width: 300px; /* Cap their max width when stacking or smaller */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .apropos-cibl-section-container .grid-item-title-apropos {
+        font-size: 36px; /* Slightly smaller titles */
+    }
+}
+
+@media (max-width: 768px) {
+    .apropos-cibl-section-container .info-grid-apropos {
+        grid-template-columns: 1fr; /* Stack to single column */
+        gap: 40px; /* Only row-gap needed now */
+        max-width: 400px; /* Max width for single column items */
+    }
+
+    /* Ensure banner text doesn't get squished by large fixed widths from inspector */
+    .apropos-cibl-section-container .banner-propos .title-propos,
+    .apropos-cibl-section-container .banner-ecouter-apropos .title-ecouter-apropos {
+        width: auto; /* Allow text to take natural width */
+        padding: 0 15px; /* Add some padding if needed */
+    }
+     .apropos-cibl-section-container .banner-propos .title-propos {
+        font-size: 48px; /* Adjust font size for smaller screens */
+        line-height: 1.2;
+        height: auto;
+    }
+    .apropos-cibl-section-container .banner-ecouter-apropos .title-ecouter-apropos {
+        font-size: 32px; /* Adjust font size */
+        line-height: 1.2;
+        height: auto;
+    }
+}
