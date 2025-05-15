@@ -3,7 +3,7 @@
     --blanc: white;
     --gris: #D9D9D9;
     --mauve: #6060E5;
-    --or: #EBB200; 
+    --or: #EBB200;
     --font-principale: 'Staatliches';
     --font-secondaire: 'DancingScript';
 }
@@ -19,26 +19,47 @@
 }
 
 html {
-    font-family: 'Staatliches', sans-serif; 
+    font-family: 'Staatliches', sans-serif;
     background-color: var(--noir);
+    height: 100vh; /* Bonne pratique pour s'assurer que % sur body fonctionne comme attendu */
 }
 
 body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    min-height: 100vh;
+    flex-direction: column;
+    align-items: center; /* Centre les enfants directs horizontalement */
+    min-height: 100vh; /* Ou min-height: 100%; si html a height: 100% */
+    background-color: var(--noir);
+}
+
+main {
+    width: 650px;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+
+    /* For main to be a flex child of body and expand */
+    flex-grow: 1;
+    flex-shrink: 0; /* Ensures main doesn't shrink, consolidating from the duplicate rule */
+
+    /* For main to be a flex parent to its children (section, footer) */
+    /* This allows margin-top: auto on footer to work */
+    display: flex;
+    flex-direction: column;
 }
 
 * {
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 .site-header {
     width: 650px;
-    max-width: 100%; 
+    max-width: 100%;
     height: 100px;
     background: var(--mauve);
     display: flex;
@@ -46,7 +67,7 @@ body {
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .header-left {
@@ -60,7 +81,7 @@ body {
     height: 25.9px;
     flex-shrink: 0;
     margin-left: 15px;
-    cursor: pointer; 
+    cursor: pointer; /* Indique que l'élément est cliquable */
 }
 
 .nav-icon line {
@@ -110,20 +131,22 @@ body {
 }
 
 .ads-button {
-    width: 135px;
-    height: 36px;
+    width: 170px;
+    height: 40px;
     background: #3838CC;
-    border-radius: 31px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
     color: var(--blanc);
-    font-family: var(--font-principale), sans-serif;
-    font-size: 16px;
     font-weight: 400;
     text-align: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: var(--font-principale);
+    font-size: 18px;
+    line-height: 1;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -134,19 +157,19 @@ body {
 
 /* ------------- FOOTER ------------- */
 .site-footer-mg {
-    background-color: var(--mauve); 
+    background-color: var(--mauve);
     color: var(--blanc);
-    padding: 30px 20px; 
+    padding: 30px 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 650px; 
-    max-width: 100%; 
+    width: 650px;
+    max-width: 100%;
     box-sizing: border-box;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: auto; 
-    flex-shrink: 0; 
+    margin-top: auto; /* This is key: pushes footer to bottom of flex container (main) */
+    flex-shrink: 0;
 }
 
 .footer-column-mg {
@@ -190,15 +213,15 @@ body {
     border-radius: 31px;
     border: 0px solid var(--noir);
     color: var(--noir);
-    padding: 5px 10px; 
+    padding: 5px 10px;
     min-height: 24px;
     flex-shrink: 0;
     text-align: center;
-    font-size: 16px; 
+    font-size: 16px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.footer-button-column-mg:first-child .footer-button-mg:nth-child(2), 
+.footer-button-column-mg:first-child .footer-button-mg:nth-child(2),
 .footer-button-column-mg:first-child .footer-button-mg:nth-child(3) {
     font-size: 16px;
     padding-top: 6px;
@@ -226,7 +249,7 @@ body {
     font-size: 13px;
     color: var(--blanc);
     font-weight: 400;
-    line-height: 1.5; 
+    line-height: 1.5;
     flex-grow: 1;
     padding: 0 10px;
 }
@@ -240,7 +263,7 @@ body {
 }
 
 .footer-social-icons-mg {
-    width: 100px; 
+    width: 100px;
     height: 40px;
     flex-shrink: 0;
     border-radius: 86px;
@@ -249,207 +272,102 @@ body {
 
 .footer-social-icons-mg .reseaux {
     display: block;
-    width: 100%;   
-    height: 100%;  
-    object-fit: cover; 
-}
-
-
-
-
-
-/*
-
-.site-header {
-    background: #6060E5;
-    height: 150px;
-    width: 100%;  
-    flex-shrink: 0; 
-    display: flex;
-    align-items: center;
-    padding: 0 30px; 
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.header-left,
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+/* Styles pour le Menu Burger */
+.burger-menu-toggle-checkbox {
+    display: none; 
 }
 
-.logo {
-    height: 85px; 
-    width: auto; 
-    display: block; 
-    flex-shrink: 0;
-}
-
-.main-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(10px, 2vw, 15px); 
-  align-items: center; 
-}
-
-.nav-button {
-    height: 58px;
-    flex-shrink: 0;
-    padding: 0 25px; 
-    border-radius: 27px;
-    border: 8px solid #000;
-    background: #D9D9D9;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; 
-    white-space: nowrap; 
-    color: #000;
-    font-family: 'Staatliches', cursive;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1; 
-    text-align: center;
-    padding: clamp(10px, 1.8vw, 15px) clamp(15px, 3vw, 25px);
-    font-size: clamp(18px, 2.8vw, 24px);
-
-}
-
-.cart-icon {
-    width: 58px;
-    height: 58px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 3px solid #FFF;
-    display: block;
-}
-
-.achat-button {
-    height: 45px; 
-    padding: 0 20px; 
-    background-color: #4A4AFF;
-    border-radius: 25px;
-    border: none;
-    flex-shrink: 0;
+.nav-icon-label {
+    cursor: pointer;
     display: inline-flex; 
     align-items: center;
+    margin-left: 15px; 
+}
+
+.burger-menu-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 650px;
+    height: 500px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--mauve); 
+    z-index: 2000; 
+    display: flex;
+    align-items: center;
     justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.burger-menu-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.burger-menu-close-btn {
+    position: absolute;
+    top: 20px; 
+    right: 10px; 
+    font-size: 32px; 
+    color: var(--blanc);
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    transition: color 0.3s ease;
+    z-index: 2001;
+}
+
+.burger-menu-close-btn:hover {
+    color: var(--or); 
+}
+
+.burger-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; 
+    margin-top: 40px; 
+}
+
+.burger-nav-item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px; 
+    padding: 18px 25px; 
+    background-color: var(--gris);
+    color: var(--noir);
+    font-family: var(--font-principale);
+    font-size: 28px;
     text-decoration: none;
-    white-space: nowrap;
-    color: #FFF; 
-    font-family: 'Staatliches', cursive;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1; 
+    border: 5px solid var(--noir); 
+    border-radius: 50px; 
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.nav-button:hover {
-    background-color: #c0c0c0; 
-}
-
-.achat-button:hover {
-    background-color: #3a3add;
-}
-
-.cart-icon:hover {
-  transform: scale(1.1);
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* Import de la police Staatliches 
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
-/* Conteneur du footer 
-footer {
-  background-color: #6060E5;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start; /* ou center selon l'alignement voulu 
-  padding: 20px;
-  font-family: 'Staatliches', cursive;
-  color: white; /* Couleur par défaut du texte 
-  font-size: 30px;
-
-}
-
-/* Section de gauche avec séparateur 
-footer .left {
-  padding-right: 20px;
-  border-right: 2px solid #444; /* ligne verticale 
-}
-
-/* Boutons mauves 
-footer .btn-mauve {
-  background-color: #4A4AFF;
-  color: #fff;
-  box-shadow:0px 4px 20px   #000 ;
-  border: none;
-  border-radius: 25px;
-  padding: 8px 15px;
-  margin: 5px 0;
-  text-decoration: none; /* si ce sont des liens 
-  display: inline-block; /* pour ajouter margin 
-}
-/*hover du btn-mauve 
-footer .btn-mauve:hover {
-  background-color: #3a3add;
-}
-/* Boutons gris jaune 
-footer .btn-jaune {
-  background-color: #EBB200;
-  color: #000;
-  border: none;
-  box-shadow:0px 4px 20px   #6a0dad ;
-  border-radius: 25px;
-  padding: 8px 15px;
-  margin: 5px 0;
-  text-decoration: none;
-  display: inline-block;
-}
-/*hover du btn-jaune 
-footer .btn-jaune:hover {
-  background-color: #dda600;
-}
-/* Section de droite (adresse) 
-footer .right {
-  padding-left: 20px;
-}
-
-/* Paragraphe adresse (optionnel) 
-footer .right p {
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Icônes sociales (image) 
-.socials .sc {
-  border-radius: 100px; 
-}
-
-footer .podcasts,
-footer .medias {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically 
-  align-items: flex-start; /* Align buttons to the start 
-  gap: 10px; /* Space between buttons in each group 
+.burger-nav-item:hover {
+    background-color: #c9c9c9; 
+    transform: scale(1.03); 
 }
 
 
-
-
-
-
-
-  /*----- Styles Généraux -----*/
-  /*------ Section Hero ------*/
+.burger-menu-toggle-checkbox:checked ~ .burger-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+}

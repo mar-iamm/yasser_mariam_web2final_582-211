@@ -3,91 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIBL Header</title>
+    <title>CIBL À Propos</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet"  href="css/styles-MG.css">
+    <link rel="stylesheet" href="css/styles-MG.css"> <!-- Assuming styles-MG.css contains the specific modal CSS -->
 </head>
 <body>
     <header class="site-header">
         <div class="header-left">
-            <img src="./assets/images/CIBL_logo.png" alt="CIBL 101.5 Logo" class="cibl-logo">
+            <a href="index.html"> <!-- Link to your homepage -->
+                <img src="./assets/images/CIBL_logo.png" alt="CIBL 101.5 Logo" class="cibl-logo">
+            </a>
         </div>
+
+        <nav class="desktop-navigation">
+            <a href="page_accueil.html" class="desktop-nav-item">ACCUEIL</a>
+            <a href="page_nos_emissions.html" class="desktop-nav-item">ÉMISSION</a>
+            <a href="page_publicite.html" class="desktop-nav-item">PUBLICITÉ</a>
+            <a href="page_a_propos.html" class="desktop-nav-item current-page">À PROPOS DE NOUS</a>
+        </nav>
+
         <div class="header-right">
              <img src="./assets/images/panier.png" alt="achat" class="cart-icon">
             <a href="#" class="ads-button">ACHAT DE PUBLICITÉ</a>
-            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="23"  height="29" viewBox="0 0 23 29" fill="none">
-                <line y1="1.5" x2="22.1562" y2="1.5" stroke="white" stroke-width="3"/>
-                <line y1="14.4502" x2="22.1562" y2="14.4502" stroke="white" stroke-width="3"/>
-                <line y1="27.4004" x2="22.1562" y2="27.4004" stroke="white" stroke-width="3"/>
-            </svg>
+            
+            <!-- Burger Menu for Mobile -->
+            <input type="checkbox" id="burger-menu-toggle" class="burger-menu-toggle-checkbox">
+            <label for="burger-menu-toggle" class="nav-icon-label">
+                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="23"  height="29" viewBox="0 0 23 29" fill="none">
+                    <line y1="1.5" x2="22.1562" y2="1.5" stroke="white" stroke-width="3"/>
+                    <line y1="14.4502" x2="22.1562" y2="14.4502" stroke="white" stroke-width="3"/>
+                    <line y1="27.4004" x2="22.1562" y2="27.4004" stroke="white" stroke-width="3"/>
+                </svg>
+            </label>
+            <div class="burger-menu-overlay">
+                <div class="burger-menu-content">
+                    <label for="burger-menu-toggle" class="burger-menu-close-btn">X</label>
+                     <nav class="burger-nav">
+                        <a href="page_accueil.html" class="burger-nav-item">ACCUEIL</a>
+                        <a href="page_nos_emissions.html" class="burger-nav-item">ÉMISSION</a>
+                        <a href="page_publicite.html" class="burger-nav-item">PUBLICITÉ</a>
+                        <a href="page_a_propos.html" class="burger-nav-item">À PROPOS DE NOUS</a>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
 
-      <main>
-        <!-- Your page's main content would go here -->
-        <!-- For example, to make sure the footer is pushed down: -->
-        <!-- <div style="height: 500px; background: #222; color: white; display:flex; align-items:center; justify-content:center;">Page Content Area</div> -->
+    <main>
+        <section class="a-propos-section">
+            <div class="a-propos-banner-top">
+                <h2 class="a-propos-title">À PROPOS DE CIBL</h2>
+            </div>
+
+            <div class="a-propos-content">
+                <img src="./assets/images/background_tape.png" alt="Cassette en fond" class="a-propos-cassette-bg">
+
+                <div class="a-propos-grid">
+                    <!-- DEBUT "NOTRE HISTOIRE" -->
+                    <div class="a-propos-item histoire-item-container">
+                        <input type="checkbox" id="histoire-modal-toggle" class="histoire-modal-toggle-checkbox">
+                        <label for="histoire-modal-toggle" class="histoire-modal-trigger">
+                            <h3 class="a-propos-item-title">NOTRE HISTOIRE +/-</h3>
+                            <img src="./assets/images/notre_histoire.jpg" alt="Notre Histoire" class="a-propos-item-image">
+                        </label>
+                        <div class="histoire-modal-overlay">
+                            <div class="histoire-modal-content">
+                                <label for="histoire-modal-toggle" class="histoire-modal-close-btn">X</label>
+                                <p>
+                                    CIBL est née le <span class="highlight-yellow">26 AVRIL 1980</span> dans le quartier
+                                    Hochelaga, à Montréal. À l’époque, la station de radio communautaire
+                                    francophone CIBL diffusait du haut des pyramides du
+                                    Village Olympique sur la <span class="highlight-yellow">FRÉQUENCE 104,5</span>. Avec ses seize
+                                    watts, la faible puissance de son antenne atteignait
+                                    seulement les auditrices et auditeurs du quartier.
+                                    Onze ans plus tard, <span class="highlight-yellow">EN 1991</span>, l’antenne est déplacée au
+                                    sommet du mât du Stade olympique de Montréal.
+                                    CIBL change de fréquence au <span class="highlight-yellow">101,5 FM</span> et ses ondes
+                                    atteignent toute l’île de Montréal.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN "NOTRE HISTOIRE" -->
+
+                    <!-- DEBUT "CONSEIL D'ADMINISTRATION" -->
+                    <div class="a-propos-item conseil-item-container">
+                        <input type="checkbox" id="conseil-modal-toggle" class="conseil-modal-toggle-checkbox">
+                        <label for="conseil-modal-toggle" class="conseil-modal-trigger">
+                            <h3 class="a-propos-item-title">CONSEIL D'ADMINISTRATION +/-</h3>
+                            <img src="./assets/images/conseil.jpg" alt="Conseil d'administration" class="a-propos-item-image">
+                        </label>
+                        <div class="conseil-modal-overlay">
+                            <div class="conseil-modal-content">
+                                <label for="conseil-modal-toggle" class="conseil-modal-close-btn">X</label>
+                                <ul>
+                                    <li>• JEANNE DORÉ, PRÉSIDENTE (MEMBRE CITOYEN)</li>
+                                    <li>• MARC-ANDRÉ ROBERTSON, VICE-PRÉSIDENT (HOCHLAB, MEMBRE ASSOCIÉ)</li>
+                                    <li>• SYLVAIN BOISSONNEAULT, SECRÉTAIRE (MEMBRE CITOYEN)</li>
+                                    <li>• EKUÉ MENSAH, TRÉSORIER (MEMBRE CITOYEN)</li>
+                                    <li>• STÉPHANE BOUSQUET, ADMINISTRATEUR (MEMBRE CITOYEN)</li>
+                                    <li>• CHAD DAMORD, ADMINISTRATEUR (MEMBRE ARTISAN)</li>
+                                    <li>• LEYLA NAHAS, ADMINISTRATRICE (MEMBRE ARTISAN)</li>
+                                    <li>• ANDRÉANNE GODON, ADMINISTRATRICE (CULTURE MONTRÉAL, MEMBRE ASSOCIÉE)</li>
+                                    <li>• BRIGITTE COUTURE, (MEMBRE CITOYEN)</li>
+                                    <li>• JASON DUPUIS, (MEMBRE ARTISAN)</li>
+                                    <li>• MEMBRE ASSOCIÉ - À COMBLER</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN "CONSEIL D'ADMINISTRATION" -->
+
+                    <!-- DEBUT "MISSION, VISION, VALEURS" -->
+                    <div class="a-propos-item mission-item-container">
+                        <input type="checkbox" id="mission-modal-toggle" class="mission-modal-toggle-checkbox">
+                        <label for="mission-modal-toggle" class="mission-modal-trigger">
+                            <h3 class="a-propos-item-title">MISSION, VISION, VALEURS +/-</h3>
+                            <img src="./assets/images/mission.webp" alt="Mission, Vision, Valeurs" class="a-propos-item-image">
+                        </label>
+                        <div class="mission-modal-overlay">
+                            <div class="mission-modal-content">
+                                <label for="mission-modal-toggle" class="mission-modal-close-btn">X</label>
+                                <p class="mission-paragraphe-1">
+                                    LA <span class="highlight-yellow">MISSION</span> DE CIBL EST DE DONNER LA PAROLE À LA COMMUNAUTÉ MONTRÉALAISE DANS TOUTE SA PLURALITÉ. ELLE PRODUIT ET DIFFUSE EN FRANÇAIS UNE PROGRAMMATION PRINCIPALEMENT AXÉE SUR LA CULTURE, LA MUSIQUE ET L’INFORMATION LOCALE.
+                                </p>
+                                <p class="mission-paragraphe-2">
+                                    LES <span class="highlight-yellow">VALEURS D’OUVERTURE, DE PERTINENCE ET D’AUDACE</span> GUIDENT CIBL QUI DEMEURE ACCESSIBLE. ELLE SE VEUT UN ESPACE INCLUSIF FAVORISANT <span class="highlight-yellow">LE PARTAGE DE CONNAISSANCES, DE RESSOURCES ET D’OPINIONS</span>. CIBL EST SOLIDAIRE DE SA COMMUNAUTÉ ET FONDAMENTALEMENT SOUCIEUSE D’<span class="highlight-yellow">ÉQUITÉ SOCIALE</span>.
+                                </p>
+                                <p class="mission-paragraphe-3">
+                                    <span class="highlight-yellow">CIBL FAVORISE LA LIBERTÉ CRÉATIVE ET PRÔNE LA RIGUEUR JOURNALISTIQUE. ELLE SE FAIT UN POINT D’HONNEUR DE LIVRER DES INFORMATIONS JUSTES ET DANS LE RESPECT DES DROITS DE TOUS ET TOUTES.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN "MISSION, VISION, VALEURS" -->
+
+                    <!-- DEBUT "COMITÉ DE PROGRAMATIONS" -->
+                    <div class="a-propos-item comite-item-container">
+                        <input type="checkbox" id="comite-modal-toggle" class="comite-modal-toggle-checkbox">
+                        <label for="comite-modal-toggle" class="comite-modal-trigger">
+                            <h3 class="a-propos-item-title">COMITÉ DE PROGRAMATIONS +/-</h3>
+                            <img src="./assets/images/comite.jpg" alt="Comité de programations" class="a-propos-item-image">
+                        </label>
+                        <div class="comite-modal-overlay">
+                            <div class="comite-modal-content">
+                                <label for="comite-modal-toggle" class="comite-modal-close-btn">X</label>
+                                <h4 class="comite-modal-title">COMITÉ DE PROGRAMMATION | 2024-25</h4>
+                                <ul class="comite-modal-list">
+                                    <li>• LEYLA NAHAS, REPRÉSENTANTE DU CA</li>
+                                    <li>• MARTIN SÉGUIN, MEMBRE ARTISAN</li>
+                                    <li>• LOUISE CURODEAU, MEMBRE ARTISAN</li>
+                                    <li>• YZABEL BEAUBIEN, MEMBRE ARTISAN ET RESPONSABLE DE LA PROGRAMMATION</li>
+                                    <li>• DARNLY DUBOIS, MEMBRE CITOYEN</li>
+                                    <li>• JUSTIN LEBLANC, MEMBRE ARTISAN</li>
+                                    <li>• À COMBLER (MEMBRE CITOYEN)</li>
+                                    <li>• LE COMITÉ DE PROGRAMMATION EST UN COMITÉ STATUTAIRE DU CA</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN "COMITÉ DE PROGRAMATIONS" -->
+                </div>
+            </div>
+            <div class="a-propos-banner-bottom"></div>
+        </section>
+
+        <footer class="site-footer-mg">
+            <div class="footer-column-mg footer-listen-mg">
+                <h3 class="footer-title-mg">OÙ NOUS ÉCOUTER:</h3>
+                <div class="footer-buttons-row-mg">
+                    <div class="footer-button-column-mg">
+                        <a href="#" class="footer-button-mg btn-purple-mg">SPOTIFY</a>
+                        <a href="#" class="footer-button-mg btn-purple-mg">APPLE PODCAST</a>
+                        <a href="#" class="footer-button-mg btn-purple-mg">BALADOQUÉBEC</a>
+                    </div>
+                    <div class="footer-button-column-mg">
+                        <a href="#" class="footer-button-mg btn-gold-mg">ESPACE MEMBRE</a>
+                        <a href="#" class="footer-button-mg btn-gold-mg">ESPACE ARTISAN</a>
+                        <a href="#" class="footer-button-mg btn-gold-mg">TROUSSE MÉDIA</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column-mg footer-address-mg">
+                <p>
+                    CIBL 101,5 FM<br>
+                    2, rue Sainte-Catherine Est, Suite 201,<br>
+                    Montréal, QC H2X 1K4<br>
+                    T 514 526.2581 #0
+                </p>
+            </div>
+
+            <div class="footer-column-mg footer-social-mg">
+                <div class="footer-social-icons-mg">
+                    <img src="./assets/images/reseaux_sociaux.png" alt="reseaux" class="reseaux">
+                </div>
+            </div>
+        </footer>
     </main>
-
-    <footer class="site-footer-mg">
-        <div class="footer-column-mg footer-listen-mg">
-            <h3 class="footer-title-mg">OÙ NOUS ÉCOUTER:</h3>
-            <div class="footer-buttons-row-mg">
-                <div class="footer-button-column-mg">
-                    <a href="#" class="footer-button-mg btn-purple-mg">SPOTIFY</a>
-                    <a href="#" class="footer-button-mg btn-purple-mg">APPLE PODCAST</a>
-                    <a href="#" class="footer-button-mg btn-purple-mg">BALADOQUÉBEC</a>
-                </div>
-                <div class="footer-button-column-mg">
-                    <a href="#" class="footer-button-mg btn-gold-mg">ESPACE MEMBRE</a>
-                    <a href="#" class="footer-button-mg btn-gold-mg">ESPACE ARTISAN</a>
-                    <a href="#" class="footer-button-mg btn-gold-mg">TROUSSE MÉDIA</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-column-mg footer-address-mg">
-            <p>
-                CIBL 101,5 FM<br>
-                2, rue Sainte-Catherine Est, Suite 201,<br>
-                Montréal, QC H2X 1K4<br>
-                T 514 526.2581 #0
-            </p>
-        </div>
-
-        <div class="footer-column-mg footer-social-mg">
-            <div class="footer-social-icons-mg">
-                <img src="./assets/images/reseaux_sociaux.png" alt="reseaux" class="reseaux">
-            </div>
-        </div>
-    </footer>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,3 +8,140 @@ main .btn-jaune{
     margin: 5px 0;
     text-decoration: none;
 }
+
+.banner-top {
+    background-color: var(--or);
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.banner-bottom {
+    background-color: var(--or);
+    height: 85px;
+    width: 100%;
+    flex-shrink: 0;
+    z-index: 0;
+}
+
+.desktop-navigation {
+    display: none; 
+}
+
+@media (min-width: 650px) {
+    /* En-tête du site sur grand écran */
+    .site-header {
+        width: 100%;
+        padding: 0 40px;
+        height: 110px;
+    }
+
+    /* Conteneur principal prend toute la largeur */
+    main {
+        width: 100%;
+    }
+
+    /* Affiche la navigation desktop et la met en page */
+    .desktop-navigation {
+        display: flex; 
+        align-items: center;
+        gap: 15px; 
+        transition: background-color 0.3ease, transform 0.3ease;
+    }
+
+    /* Style des liens de navigation desktop */
+    .desktop-nav-item {
+        background-color: #D9D9D9;
+        color: var(--noir);
+        border: 3px solid var(--noir);
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-family: var(--font-principale);
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap; 
+        flex-shrink: 0;
+    }
+
+    /* Effet au survol des liens de navigation */
+    .desktop-nav-item:hover {
+        transform: translateY(-2px); 
+        background-color: var(--blanc);
+    }
+
+    /* Style du lien de la page active */
+    .desktop-nav-item.current-page {
+        background-color: #D9D9D9; 
+        color: var(--noir);
+        border: 3px solid var(--noir);
+    }
+
+    /* Cache le menu burger sur Desktop */
+    .nav-icon-label {
+        display: none;
+    }
+    .burger-menu-overlay {
+        display: none !important; 
+    }
+    .burger-menu-toggle-checkbox {
+        display: none !important;
+    }
+
+
+    /* Ajustements pour la section "À Propos" sur grand écran */
+    .a-propos-section {
+        width: 100%;
+    }
+
+    .banner-top {
+        height: 100px; 
+    }
+
+    .banner-bottom {
+        height: 100px;
+    }
+
+    /* Ajustements pour le Footer sur grand écran */
+    .site-footer-mg {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 40px;
+        align-items: center;
+    }
+
+
+    .footer-title-mg {
+        font-size: 20px;
+    }
+    .footer-button-mg {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+    /* Tailles spécifiques pour certains boutons du footer */
+    .footer-button-column-mg:first-child .footer-button-mg:nth-child(2),
+    .footer-button-column-mg:first-child .footer-button-mg:nth-child(3) {
+        font-size: 18px;
+    }
+
+
+    .footer-address-mg {
+        flex-grow: 0; 
+        text-align: left;
+        padding: 0 30px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .footer-social-icons-mg {
+        width: 120px;
+        height: 48px;
+    }
+}

@@ -3,28 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIBL Header</title>
+    <title>CIBL À Propos</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet"  href="css/styles-MG.css">
+    <link rel="stylesheet" href="css/styles-MG.css"> <!-- Assuming styles-MG.css contains the specific modal CSS -->
 </head>
 <body>
     <header class="site-header">
         <div class="header-left">
-            <img src="./assets/images/CIBL_logo.png" alt="CIBL 101.5 Logo" class="cibl-logo">
+            <a href="index.html"> <!-- Link to your homepage -->
+                <img src="./assets/images/CIBL_logo.png" alt="CIBL 101.5 Logo" class="cibl-logo">
+            </a>
         </div>
+
+       <nav class="desktop-navigation">
+            <a href="page_accueil.html" class="desktop-nav-item">ACCUEIL</a>
+            <a href="page_nos_emissions.html" class="desktop-nav-item">ÉMISSION</a>
+            <a href="page_publicite.html" class="desktop-nav-item">PUBLICITÉ</a>
+            <a href="page_a_propos.html" class="desktop-nav-item current-page">À PROPOS DE NOUS</a>
+        </nav>
+
         <div class="header-right">
              <img src="./assets/images/panier.png" alt="achat" class="cart-icon">
             <a href="#" class="ads-button">ACHAT DE PUBLICITÉ</a>
-            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="23"  height="29" viewBox="0 0 23 29" fill="none">
-                <line y1="1.5" x2="22.1562" y2="1.5" stroke="white" stroke-width="3"/>
-                <line y1="14.4502" x2="22.1562" y2="14.4502" stroke="white" stroke-width="3"/>
-                <line y1="27.4004" x2="22.1562" y2="27.4004" stroke="white" stroke-width="3"/>
-            </svg>
+            
+            <!-- Burger Menu for Mobile -->
+            <input type="checkbox" id="burger-menu-toggle" class="burger-menu-toggle-checkbox">
+            <label for="burger-menu-toggle" class="nav-icon-label">
+                <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="23"  height="29" viewBox="0 0 23 29" fill="none">
+                    <line y1="1.5" x2="22.1562" y2="1.5" stroke="white" stroke-width="3"/>
+                    <line y1="14.4502" x2="22.1562" y2="14.4502" stroke="white" stroke-width="3"/>
+                    <line y1="27.4004" x2="22.1562" y2="27.4004" stroke="white" stroke-width="3"/>
+                </svg>
+            </label>
+            <div class="burger-menu-overlay">
+                <div class="burger-menu-content">
+                    <label for="burger-menu-toggle" class="burger-menu-close-btn">X</label>
+                    <nav class="burger-nav">
+                        <a href="page_accueil.html" class="burger-nav-item">ACCUEIL</a>
+                        <a href="page_nos_emissions.html" class="burger-nav-item">ÉMISSION</a>
+                        <a href="page_publicite.html" class="burger-nav-item">PUBLICITÉ</a>
+                        <a href="page_a_propos.html" class="burger-nav-item">À PROPOS DE NOUS</a>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
     <main>
+        <div class="a-propos-banner-top"></div>
         
     </main>
+    <div class="a-propos-banner-bottom"></div>
 
     <footer class="site-footer-mg">
         <div class="footer-column-mg footer-listen-mg">

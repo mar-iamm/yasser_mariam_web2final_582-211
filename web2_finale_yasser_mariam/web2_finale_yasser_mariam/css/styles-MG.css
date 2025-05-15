@@ -1,212 +1,896 @@
-/* ============================================= */
-/* == STYLES FOR "À PROPOS DE CIBL" SECTION == */
-/* ============================================= */
+/*-------------------------------------------*/
+/* # SECTION : Styles Généraux */
+/*-------------------------------------------*/
 
-/* Main container for the "À Propos" section, based on Inspector Image 1 */
-.apropos-cibl-section-container {
-    width: 100%; /* Occupy available width within main */
-    max-width: 1440px; /* Max width from inspector */
-    /* height: 1484px; /* From inspector - often better to let content define height or use min-height */
-    min-height: 800px; /* Example: adjust as needed */
-    background: var(--noir); /* #000 from inspector */
-    margin: 40px auto; /* Center it on the page if <main> allows, and add some vertical space */
-    display: flex;
-    flex-direction: column;
-    /* The overall body background is var(--noir) via html tag, so this container will blend
-       unless <main> has a different background or there's body padding. */
-}
-
-/* Top Yellow Banner: "À Propos de cibl", based on Inspector Image 6 & 7 */
-.apropos-cibl-section-container .banner-propos { /* Increased specificity */
-    display: flex;
-    /* width: 1440px; Should be 100% of its parent .apropos-cibl-section-container */
-    width: 100%;
-    height: 106px; /* From inspector */
-    /* Padding from inspector: 13px 565px 13px 481px;
-       These large L/R paddings are for precise text positioning within a 1440px fixed design.
-       For a more flexible approach, you might center the text child.
-       Let's try to apply them but be mindful of smaller screens.
-    */
-    padding: 13px 0; /* Vertical padding */
-    align-items: center;
-    justify-content: center; /* This will center the .title-propos if its width is less than banner */
-    background: var(--or); /* #EBB200 from inspector */
-    box-sizing: border-box;
-    flex-shrink: 0; /* From inspector */
-}
-
-.apropos-cibl-section-container .banner-propos .title-propos { /* Increased specificity */
-    width: 394px; /* From inspector */
-    height: 80px; /* From inspector */
-    flex-shrink: 0; /* From inspector */
-    color: var(--noir); /* #000 from inspector */
-    font-family: var(--font-principale); /* Staatliches from inspector */
-    font-size: 64px; /* From inspector */
-    font-style: normal;
-    font-weight: 400; /* Staatliches is often 400 weight */
-    line-height: 80px; /* To vertically center in its own height */
+/* Styles pour body */
+body {
     margin: 0;
-    text-align: center; /* Explicitly center text within this block */
-}
-
-/* Content Area for the grid (with vinyl background) */
-.apropos-cibl-section-container .content-area-apropos { /* Increased specificity */
-    padding: 50px 20px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1; /* Takes up remaining space if .apropos-cibl-section-container has fixed height */
-    
-    /* === Replace with your actual vinyl image path === */
-    background-image: url('../assets/images/vinyl-background-faint.png'); /* ADJUST PATH! */
-    background-size: contain; /* Or 'cover', depending on image proportions and desired effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    /* To make it "faint" if the image itself isn't already, you can apply opacity to a pseudo-element
-       or ensure the image file itself is semi-transparent. Applying opacity here would affect text too.
-       Example using a pseudo-element (more complex):
-    */
-    /* position: relative; */
-}
-/*
-.apropos-cibl-section-container .content-area-apropos::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('../assets/images/vinyl-background.png'); // ADJUST PATH!
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.3; // Adjust for faintness
-    z-index: -1; // Place behind content
-}
-*/
-
-
-.apropos-cibl-section-container .info-grid-apropos { /* Increased specificity */
-    display: grid;
-    /* For a 2x2 grid as shown in the full image */
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(2, auto);
-    gap: 50px 80px; /* row-gap column-gap - adjust to match visual */
-    width: 100%;
-    max-width: 950px; /* Adjust to control overall width of the grid and spacing */
-    z-index: 1; /* Ensure grid is above pseudo-element background if used */
-}
-
-/* Styling for individual grid items and their titles, based on Inspector Images 2-5 */
-.apropos-cibl-section-container .grid-item-apropos { /* Increased specificity */
+    padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--noir);
+}
+
+/* Conteneur principal */
+main {
+    width: 650px;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*-------------------------------------------*/
+/* # SECTION : À Propos */
+/*-------------------------------------------*/
+.a-propos-section {
+    width: 650px;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bannière haute de la section */
+.a-propos-banner-top {
+    background-color: var(--or);
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* Titre principal de la section */
+.a-propos-title {
+    color: var(--noir);
+    font-family: var(--font-principale);
+    font-size: 48px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Zone de contenu de la section */
+.a-propos-content {
+    background-color: var(--noir);
+    padding: 40px 20px;
+    position: relative; 
+    width: 100%;
+    height: 500px;
+}
+
+/* Image de fond (cassette) */
+.a-propos-cassette-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 650px;
+    max-width: 100%;
+    opacity: 0.40;
+    pointer-events: none; 
+}
+
+/* Grille des éléments "À propos" */
+.a-propos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px 25px; 
+    position: relative;
+    z-index: 1; 
+}
+
+/* Style pour un élément de la grille */
+.a-propos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-.apropos-cibl-section-container .grid-item-title-apropos { /* Increased specificity */
-    color: var(--blanc); /* #FFF from inspector */
-    font-family: var(--font-principale); /* Staatliches from inspector */
-    font-size: 48px; /* From inspector */
-    font-style: normal;
+/* Titre d'un élément de la grille */
+.a-propos-item-title {
+    color: var(--blanc);
+    font-family: var(--font-principale);
+    font-size: 24px;
     font-weight: 400;
-    line-height: 1.2; /* Or 'normal' from inspector */
-    margin: 0 0 15px 0; /* Space below title, above image */
+    line-height: 1.2;
+    margin-bottom: 15px;
+    transition: color 0.3s ease; 
 }
 
-.apropos-cibl-section-container .grid-item-image { /* Increased specificity */
-    display: block; 
-    object-fit: cover; /* Ensure image covers dimensions without distortion */
-    border: 1px solid #333; /* Optional subtle border if images blend too much */
-    flex-shrink: 0; /* From inspector layout details of similar elements */
+/* Image d'un élément de la grille */
+.a-propos-item-image {
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid transparent; 
+    transition: transform 0.3s ease, border-color 0.3s ease; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    width: 200px;
+    height: 100px;
 }
 
-/* Specific image dimensions from inspector data (Images 2, 3, 4, 5 "Layout" section) */
-/* These are applied to the <img> tags directly */
-.apropos-cibl-section-container .histoire-image,
-.apropos-cibl-section-container .conseil-image,
-.apropos-cibl-section-container .mission-image {
-    width: 357px; /* From inspector */
-    height: 201px; /* From inspector */
-    /* aspect-ratio: 119/67; /* Already defined by width/height */
+/* Effets au survol des éléments de la grille */
+.a-propos-item:hover .a-propos-item-image {
+    transform: scale(1.05); 
+    border-color: var(--or); 
 }
 
-.apropos-cibl-section-container .comite-image {
-    width: 367px; /* From inspector */
-    height: 207px; /* From inspector */
-    /* aspect-ratio: 367/207; /* Already defined by width/height */
+.a-propos-item:hover .a-propos-item-title {
+    color: var(--or); 
 }
 
-/* Bottom Yellow Banner: "Où nous écouter", based on Inspector Image 8 & 9 */
-.apropos-cibl-section-container .banner-ecouter-apropos { /* Increased specificity */
+/* Bannière basse de la section */
+.a-propos-banner-bottom {
+    background-color: var(--or);
+    height: 85px;
+    width: 100%;
+    flex-shrink: 0;
+    z-index: 0;
+}
+
+/*--------------------------------------------------*/
+/* # SECTION : Modal Histoire */
+/*--------------------------------------------------*/
+
+/* Checkbox pour contrôler l'ouverture/fermeture du modal (cachée) */
+.histoire-modal-toggle-checkbox {
+    display: none;
+}
+
+/* Élément cliquable pour ouvrir le modal Histoire */
+.histoire-modal-trigger {
+    cursor: pointer;
     display: flex;
-    width: 100%; /* 100% of its parent .apropos-cibl-section-container */
-    /* height set by content and padding, or specific if needed from inspector (not directly given for banner, but for text inside) */
-    /* Padding from inspector: 27px 1068px 0px 33px;
-       Again, large L/R paddings. 0px bottom padding can look odd.
-       Let's use simpler padding and align text.
-    */
-    padding: 27px 33px; /* Symmetrical vertical, left padding from inspector */
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align text to the left */
-    background: var(--or); /* #EBB200 from inspector */
-    box-sizing: border-box;
-    flex-shrink: 0; /* Not explicitly in inspector for this banner but good practice */
 }
 
-.apropos-cibl-section-container .banner-ecouter-apropos .title-ecouter-apropos { /* Increased specificity */
-    width: 339px; /* From inspector */
-    height: 96px; /* From inspector */
-    flex-shrink: 0; /* From inspector */
-    color: var(--blanc); /* #FFF from inspector */
-    font-family: var(--font-principale); /* Staatliches from inspector */
-    font-size: 40px; /* From inspector */
+/* Effets au survol du déclencheur du modal Histoire */
+.histoire-modal-trigger:hover .a-propos-item-title {
+    color: var(--or, #E8B200);
+}
+
+.histoire-modal-trigger:hover .a-propos-item-image {
+    transform: scale(1.05);
+    border-color: var(--or, #E8B200);
+}
+
+/* Fond semi-transparent derrière le modal */
+.histoire-modal-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1000; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+/* Contenu du modal Histoire */
+.histoire-modal-content {
+    background: #000;
+    width: 600px;
+    height: auto; 
+    min-height: 212px;
+    box-sizing: border-box;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    border: 2px solid var(--or, #E8B200); 
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* Paragraphes dans le modal Histoire */
+.histoire-modal-content p {
+    margin: 0;
+    width: 100%;
+}
+
+/* Texte surligné en jaune */
+.histoire-modal-content .highlight-yellow {
+    color: #E8B200;
+}
+
+/* Bouton pour fermer le modal Histoire */
+.histoire-modal-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #FFF;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    z-index: 10;
+}
+
+/* Affiche le modal quand la checkbox est cochée */
+.histoire-modal-toggle-checkbox:checked ~ .histoire-modal-overlay {
+    opacity: 1; 
+    visibility: visible; 
+    transition: opacity 0.3s ease, visibility 0s linear 0s; 
+}
+
+/* Effet au survol du bouton de fermeture */
+.histoire-modal-close-btn:hover {
+    color: var(--or, #E8B200); 
+}
+
+/* Classe utilitaire pour surligner en jaune */
+.highlight-yellow {
+    color: var(--or, #E8B200);
+}
+
+/*-------------------------------------------------*/
+/* # SECTION : Modal Mission */
+/*-------------------------------------------------*/
+.mission-modal-toggle-checkbox {
+    display: none;
+}
+
+.mission-modal-trigger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Effets de survol pour le déclencheur du modal Mission */
+.mission-modal-trigger:hover .a-propos-item-title {
+    color: var(--or, #E8B200);
+}
+
+.mission-modal-trigger:hover .a-propos-item-image {
+    transform: scale(1.05);
+    border-color: var(--or, #E8B200);
+}
+
+.mission-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.mission-modal-content {
+    background: #000;
+    width: 331px;
+    height: 440px;
+    box-sizing: border-box;
+    border: 2px solid var(--or, #E8B200);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.mission-modal-content p {
+    margin: 0 0 20px 0;
+    text-align: left;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.2; /* Or 'normal' or 96px to fill height */
+}
+.mission-modal-content p:last-child {
+    margin-bottom: 0;
+    z-index: 1;
+}
+
+.mission-paragraphe-1 {
+    width: 274px;
+    font-size: 15px;
+    color: #FFF;
+    line-height: normal;
+}
+
+.mission-paragraphe-2 {
+    width: 276px;
+    font-size: 15px;
+    color: #FFF;
+    line-height: normal;
+}
+
+.mission-paragraphe-3 {
+    width: 278px;
+    font-size: 15px;
+    line-height: normal;
+}
+
+.mission-modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFF;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.mission-modal-close-btn:hover {
+    color: var(--or, #E8B200);
+}
+
+.mission-modal-toggle-checkbox:checked ~ .mission-modal-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+/*-------------------------------------------------*/
+/* # SECTION : Modal Conseil */
+/*-------------------------------------------------*/
+/* Styles communs pour les déclencheurs de modal (si pas déjà généralisé) */
+.conseil-modal-trigger { 
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Effets de survol pour le déclencheur du modal Conseil (si pas déjà généralisé) */
+.conseil-modal-trigger:hover .a-propos-item-title {
+    color: var(--or, #E8B200);
+}
+
+.conseil-modal-trigger:hover .a-propos-item-image {
+    transform: scale(1.05);
+    border-color: var(--or, #E8B200);
+}
+
+/* Checkbox cachée pour le modal Conseil */
+.conseil-modal-toggle-checkbox {
+    display: none;
+}
+
+/* Overlay pour le modal Conseil */
+.conseil-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+/* Bouton de fermeture pour le modal Conseil (si pas déjà généralisé avec les autres) */
+.conseil-modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--blanc);
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.conseil-modal-close-btn:hover {
+    color: var(--or, #E8B200);
+}
+
+/* Affichage du modal Conseil lorsque la checkbox est cochée */
+.conseil-modal-toggle-checkbox:checked ~ .conseil-modal-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+/* Contenu du modal Conseil */
+.conseil-modal-content {
+    background: var(--noir);
+    width: 400px;
+    height: 260px;
+    box-sizing: border-box;
+    border: 2px solid var(--or, #E8B200);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Liste dans le modal Conseil */
+.conseil-modal-content ul {
+    list-style-type: none;
+    padding: 0 15px;
     margin: 0;
-    display: flex; /* To allow vertical alignment if needed */
-    align-items: center; /* Vertically center text if line-height < height */
+    width: 100%;
+    height: 224px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    overflow-y: auto; 
+    box-sizing: border-box;
 }
 
-/* Responsive adjustments for the grid */
-@media (max-width: 992px) { /* Adjust breakpoint as needed */
-    .apropos-cibl-section-container .info-grid-apropos {
-        gap: 30px 40px;
-        max-width: 700px;
-    }
-    .apropos-cibl-section-container .histoire-image,
-    .apropos-cibl-section-container .conseil-image,
-    .apropos-cibl-section-container .mission-image,
-    .apropos-cibl-section-container .comite-image {
-        width: 100%; /* Allow images to scale down */
-        max-width: 300px; /* Cap their max width when stacking or smaller */
-        height: auto; /* Maintain aspect ratio */
-    }
-    .apropos-cibl-section-container .grid-item-title-apropos {
-        font-size: 36px; /* Slightly smaller titles */
-    }
+/* Élément de liste dans le modal Conseil */
+.conseil-modal-content li {
+    color: var(--blanc);
+    font-family: var(--font-principale);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-    .apropos-cibl-section-container .info-grid-apropos {
-        grid-template-columns: 1fr; /* Stack to single column */
-        gap: 40px; /* Only row-gap needed now */
-        max-width: 400px; /* Max width for single column items */
+/* Styles de survol pour les items "À Propos" qui NE SONT PAS des modaux Histoire, Mission ou Conseil */
+.a-propos-item:not(.histoire-item-container):not(.mission-item-container):not(.conseil-item-container):hover .a-propos-item-image {
+    transform: scale(1.05);
+    border-color: var(--or);
+}
+
+.a-propos-item:not(.histoire-item-container):not(.mission-item-container):not(.conseil-item-container):hover .a-propos-item-title {
+    color: var(--or);
+}
+
+/*-------------------------------------------------*/
+/* # SECTION : Modal Comité */
+/*-------------------------------------------------*/
+.comite-modal-toggle-checkbox {
+    display: none;
+}
+
+.comite-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.comite-modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--blanc);
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+.comite-modal-close-btn:hover { color: var(--or, #E8B200); }
+
+
+/* Affichage du modal Comité lorsque la checkbox est cochée */
+.comite-modal-toggle-checkbox:checked ~ .comite-modal-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+/* Contenu du modal Comité */
+.comite-modal-content {
+    background: var(--noir);
+    display: flex;
+    height: 370px;
+    width: auto; 
+    min-width: 400px; 
+    max-width: 90vw;
+    padding-right: 20px;
+    padding-left: 20px;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid var(--or, #E8B200);
+    position: relative;
+    text-align: left; 
+}
+
+/* Titre dans le modal Comité */
+.comite-modal-title {
+    color: var(--blanc);
+    font-family: var(--font-principale, 'Staatliches', sans-serif);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    width: 386px;
+    max-width: 100%;
+    margin-bottom: 20px; 
+    box-sizing: border-box;
+}
+
+/* Liste dans le modal Comité */
+.comite-modal-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 386px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Élément de liste dans le modal Comité */
+.comite-modal-list li {
+    color: var(--blanc);
+    font-family: var(--font-principale, 'Staatliches', sans-serif);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 8px; 
+    text-align: left;
+}
+
+/* Déclencheur du modal Comité */
+.comite-modal-trigger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Effets au survol du déclencheur du modal Comité */
+.comite-modal-trigger:hover .a-propos-item-title {
+    color: var(--or, #E8B200);
+}
+
+.comite-modal-trigger:hover .a-propos-item-image {
+    transform: scale(1.05);
+    border-color: var(--or, #E8B200);
+}
+
+/* Pas de marge en bas pour le dernier élément de la liste */
+.comite-modal-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Styles de survol pour les items "À Propos" qui NE SONT PAS des modaux spécifiques */
+.a-propos-item:not(.histoire-item-container):not(.mission-item-container):not(.conseil-item-container):not(.comite-item-container):hover .a-propos-item-image {
+    transform: scale(1.05);
+    border-color: var(--or);
+}
+
+.a-propos-item:not(.histoire-item-container):not(.mission-item-container):not(.conseil-item-container):not(.comite-item-container):hover .a-propos-item-title {
+    color: var(--or);
+}
+
+/*-------------------------------------------------------------*/
+/* # SECTION : Navigation Desktop (initialement cachée) */
+/*-------------------------------------------------------------*/
+.desktop-navigation {
+    display: none; 
+}
+
+/*-----------------------------------------------------------------*/
+/* # ADAPTATION PAR MEDIA QUERIES (Responsiveness) pour grands écrans */
+/*-----------------------------------------------------------------*/
+
+/* Styles d'exception pour les écrans d'une largeur de minimum 650px et plus */
+@media (min-width: 650px) {
+    /* En-tête du site sur grand écran */
+    .site-header {
+        width: 100%;
+        padding: 0 40px;
+        height: 110px;
     }
 
-    /* Ensure banner text doesn't get squished by large fixed widths from inspector */
-    .apropos-cibl-section-container .banner-propos .title-propos,
-    .apropos-cibl-section-container .banner-ecouter-apropos .title-ecouter-apropos {
-        width: auto; /* Allow text to take natural width */
-        padding: 0 15px; /* Add some padding if needed */
+    /* Conteneur principal prend toute la largeur */
+    main {
+        width: 100%;
     }
-     .apropos-cibl-section-container .banner-propos .title-propos {
-        font-size: 48px; /* Adjust font size for smaller screens */
-        line-height: 1.2;
-        height: auto;
+
+    /* Affiche la navigation desktop et la met en page */
+    .desktop-navigation {
+        display: flex; 
+        align-items: center;
+        gap: 15px; 
+        transition: background-color 0.3ease, transform 0.3ease;
     }
-    .apropos-cibl-section-container .banner-ecouter-apropos .title-ecouter-apropos {
-        font-size: 32px; /* Adjust font size */
-        line-height: 1.2;
-        height: auto;
+
+    /* Style des liens de navigation desktop */
+    .desktop-nav-item {
+        background-color: #D9D9D9;
+        color: var(--noir);
+        border: 3px solid var(--noir);
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-family: var(--font-principale);
+        font-size: 18px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap; 
+        flex-shrink: 0;
     }
+
+    /* Effet au survol des liens de navigation */
+    .desktop-nav-item:hover {
+        transform: translateY(-2px); 
+        background-color: var(--blanc);
+    }
+
+    /* Style du lien de la page active */
+    .desktop-nav-item.current-page {
+        background-color: #D9D9D9; 
+        color: var(--noir);
+        border: 3px solid var(--noir);
+    }
+
+    /* Cache le menu burger sur Desktop */
+    .nav-icon-label {
+        display: none;
+    }
+    .burger-menu-overlay {
+        display: none !important; 
+    }
+    .burger-menu-toggle-checkbox {
+        display: none !important;
+    }
+
+
+    /* Ajustements pour la section "À Propos" sur grand écran */
+    .a-propos-section {
+        width: 100%;
+    }
+
+    .a-propos-banner-top {
+        height: 100px; 
+    }
+    .a-propos-title {
+        font-size: 56px;
+    }
+
+    .a-propos-content {
+        padding: 60px 40px; 
+        height: auto; 
+    }
+
+    .a-propos-cassette-bg {
+        width: 1000px;
+        height: 700px;
+        object-fit: cover;
+    }
+
+    .a-propos-grid {
+        gap: 50px 30px; 
+    }
+
+    .a-propos-item-title {
+        font-size: 30px; 
+        margin-bottom: 20px;
+    }
+
+    .a-propos-item-image {
+        width: 300px;
+        height: 150px;
+    }
+
+    .a-propos-banner-bottom {
+        height: 100px;
+    }
+
+    /* Ajustements pour le Footer sur grand écran */
+    .site-footer-mg {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 40px;
+        align-items: center;
+    }
+
+
+    .footer-title-mg {
+        font-size: 20px;
+    }
+    .footer-button-mg {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+    /* Tailles spécifiques pour certains boutons du footer */
+    .footer-button-column-mg:first-child .footer-button-mg:nth-child(2),
+    .footer-button-column-mg:first-child .footer-button-mg:nth-child(3) {
+        font-size: 18px;
+    }
+
+
+    .footer-address-mg {
+        flex-grow: 0; 
+        text-align: left;
+        padding: 0 30px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .footer-social-icons-mg {
+        width: 120px;
+        height: 48px;
+    }
+
+    .histoire-modal-content {
+    background: #000;
+    width: 800px;
+    height: auto;
+    min-height: 212px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    border: 2px solid var(--or, #E8B200);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.mission-modal-content {
+    background: #000;
+    width: 400px;
+    height: 700px;
+    box-sizing: border-box;
+    border: 2px solid var(--or, #E8B200);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    z-index: 1;
+}
+
+.mission-paragraphe-1 {
+    width: 274px;
+    font-size: 20px;
+    color: #FFF;
+    line-height: normal;
+}
+
+.mission-paragraphe-2 {
+    width: 274px;
+    font-size: 20px;
+    color: #FFF;
+    line-height: normal;
+}
+
+.mission-paragraphe-3 {
+    width: 274px;
+    font-size: 20px;
+    color: #FFF;
+    line-height: normal;
+}
+
+.conseil-modal-content {
+    background: var(--noir);
+    width: 600px;
+    height: 300px;
+    box-sizing: border-box;
+    border: 2px solid var(--or, #E8B200);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conseil-modal-content li {
+    color: var(--blanc);
+    font-family: var(--font-principale);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.comite-modal-content {
+    background: var(--noir);
+    display: flex;
+    height: 500px;
+    width: auto;
+    min-width: 400px;
+    max-width: 90vw;
+    padding-right: 20px;
+    padding-left: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid var(--or, #E8B200);
+    position: relative;
+    text-align: left;
+}
+
+.comite-modal-list li {
+    color: var(--blanc);
+    font-family: var(--font-principale, 'Staatliches', sans-serif);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.comite-modal-title {
+    color: var(--blanc);
+    font-family: var(--font-principale, 'Staatliches', sans-serif);
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    width: 386px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+
+
 }
