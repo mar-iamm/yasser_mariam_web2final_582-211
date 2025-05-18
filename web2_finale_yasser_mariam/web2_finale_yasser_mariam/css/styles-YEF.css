@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 main .btn-jaune {
     background-color: #EBB200;
     color: #000;
@@ -16,19 +16,6 @@ main .btn-jaune {
 
 .btn-jaune:hover {
    transform: translateY(-2px);
-=======
-/* Style général du bouton jaune dans le main */
-main .btn-jaune {
-   background-color: #EBB200; /* couleur de fond jaune */
-   color: #000; /* texte en noir */
-   border: none;
-   border-radius: 20px; /* coins arrondis */
-   padding: 8px 15px; /* espace intérieur */
-   margin: 5px 0;
-   text-decoration: none;
-   display: inline-block;
-   transition: transform 0.2s ease-in-out; /* animation au survol */
->>>>>>> c55f3cc0690ea677f7666158148b508f946d2a31
 }
 
 /* Bannière jaune principale en haut */
