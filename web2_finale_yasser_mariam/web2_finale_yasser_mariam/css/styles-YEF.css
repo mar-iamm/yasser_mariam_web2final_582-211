@@ -1,234 +1,462 @@
-main .btn-jaune{
-    background-color: #EBB200;
-    color: #000;
-    border: none;
-    box-shadow:0px 4px 20px   #6a0dad ;
-    border-radius: 20px;
-    padding: 8px 15px;
-    margin: 5px 0;
-    text-decoration: none;
+/* Style général du bouton jaune dans le main */
+main .btn-jaune {
+   background-color: #EBB200; /* couleur de fond jaune */
+   color: #000; /* texte en noir */
+   border: none;
+   border-radius: 20px; /* coins arrondis */
+   padding: 8px 15px; /* espace intérieur */
+   margin: 5px 0;
+   text-decoration: none;
+   display: inline-block;
+   transition: transform 0.2s ease-in-out; /* animation au survol */
 }
 
-.banner-top {
-    background-color: var(--or);
-    height: 85px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-shrink: 0;
-    z-index: 1;
+/* Bannière jaune principale en haut */
+.banner-yellow {
+   background-color: var(--or); /* couleur de fond avec variable CSS */
+   height: 85px;
+   display: flex;
+   align-items: center; /* centrer verticalement */
+   justify-content: center; /* centrer horizontalement */
+   width: 100%;
+   flex-shrink: 0;
+   z-index: 1;
 }
 
+/* Bannière jaune en bas */
 .banner-bottom {
-    background-color: var(--or);
-    height: 85px;
-    width: 100%;
-    flex-shrink: 0;
-    z-index: 0;
+   background-color: var(--or);
+   height: 85px;
+   width: 100%;
+   flex-shrink: 0;
+   z-index: 0;
 }
 
+/* Cache la navigation desktop par défaut */
 .desktop-navigation {
-    display: none; 
+   display: none;
 }
+
+/* Style des images dans le haut */
 .top img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+   width: 100%;
+   height: 100%;
+   object-fit: cover; /* garde le ratio tout en remplissant le cadre */
 }
+
+/* Section des émissions (fond noir, centrée) */
 .emissions-section {
-    padding: 40px 0;
-    background-color: var(--noir);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   padding: 40px 0;
+   background-color: var(--noir); /* fond noir */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-.banner-top {
-    font-family: var(--font-principale);
-    font-size: 30px;
-    color: var(--noir);
-    background-color: var(--or);
-    padding: 10px 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    letter-spacing: 1px;
+/* Style typographique pour la bannière jaune */
+.banner-yellow {
+   font-family: var(--font-principale);
+   font-size: 30px;
+   color: var(--noir);
+   background-color: var(--or);
+   padding: 10px 30px;
+   margin-bottom: 20px;
+   text-align: center;
+   letter-spacing: 1px; /* espacement entre les lettres */
 }
 
+/* Variante de la bannière jaune (dupliquée) */
+.banner-yellow2 {
+   font-family: var(--font-principale);
+   font-size: 30px;
+   color: var(--noir);
+   background-color: var(--or);
+   padding: 10px 30px;
+   text-align: center;
+   letter-spacing: 1px;
+   height: 85px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   flex-shrink: 0;
+   z-index: 1;
+}
+
+/* Grille d'émissions */
 .emissions-grid {
- display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: black;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 1rem;
+   padding: 1rem;
+   background-color: black;
 }
 
+/* Style des images dans la grille */
 .emissions-grid img {
- width: calc(100% / 3 - 1rem); /* ~6 images par ligne avec marge */
-  max-width: 150px;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #fff5;
-  transition: transform 0.3s ease;
+   width: calc(100% / 3 - 1rem); /* 3 images par ligne */
+   max-width: 150px;
+   height: auto;
+   aspect-ratio: 1 / 1; /* carré */
+   object-fit: cover;
+   border-radius: 8px;
+   box-shadow: 0 0 5px #fff5;
+   transition: transform 0.3s ease;
 }
 
+/* Effet au survol des images */
 .emissions-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-}
-.search-bar-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+   transform: scale(1.05);
+   box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
+/* Conteneur de la barre de recherche */
+.search-bar-container {
+   display: flex;
+   justify-content: center;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+/* Style de l’input de recherche */
 #searchInput {
-  padding: 0.6rem 1rem;
-  width: 80%;
-  max-width: 400px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  background-color: #111;
-  color: white;
-  box-shadow: 0 0 0 2px #fff;
-  transition: box-shadow 0.3s ease;
+   padding: 0.6rem 1rem;
+   width: 80%;
+   max-width: 400px;
+   font-size: 1rem;
+   border: none;
+   border-radius: 25px;
+   outline: none;
+   background-color: #111;
+   color: white;
+   box-shadow: 0 0 0 2px #fff;
+   transition: box-shadow 0.3s ease;
 }
 
 #searchInput:focus {
-  box-shadow: 0 0 0 2px #ffd700;
+   box-shadow: 0 0 0 2px #ffd700; /* bord doré au focus */
 }
 
+/* Style du texte */
+.text {
+   font-size: 20px;
+   color: #D9D9D9;
+}
+
+/* Style du bloc top (avec image de fond) */
+.top {
+   background-image: url(/web2_finale_yasser_mariam/web2_finale_yasser_mariam/assets/images/CIBL+bannière+officielle\ 1.jpg);
+   background-size: cover;
+   background-position: center;
+   min-height: 100px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   text-align: center;
+}
+
+/* Effet au survol du bouton jaune dans la section top */
+.top .btn-jaune:hover {
+   background-color: var(--or);
+   transform: translateY(-2px);
+   box-shadow: 0px 4px 20px #6a0dad;
+}
+
+/* Variante de bannière en bas */
+.banner-bottom2 {
+   background-color: var(--orsssss); /* variable personnalisée */
+}
+
+/* Autre grille d’émissions */
+.emissions .grid {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 20px;
+   gap: 20px;
+   background: #000;
+}
+
+.emissions img {
+   width: 150px;
+   height: auto;
+   border-radius: 5px;
+}
+
+/* Bande défilante ou texte centré */
+.bande-noire {
+   background: var(--or);
+   color: black;
+   text-align: center;
+   font-weight: bold;
+   font-size: 1.3rem;
+   padding: 10px 0;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+/* Section Bingo avec image de fond */
+.bingo {
+   background-image: url("/web2_finale_yasser_mariam/web2_finale_yasser_mariam/assets/images/image\ 5\ \(1\).png");
+   background-size: cover;
+   background-position: center;
+   color: white;
+   position: relative;
+   padding: 60px 20px;
+   text-align: center;
+}
+
+.bingo-overlay {
+   padding: 40px;
+   border-radius: 10px;
+   display: inline-block;
+}
+
+.bingo h2 {
+   font-size: 3rem;
+   margin: 0 0 10px;
+   color: var(--or); /* texte doré */
+}
+
+.bingo p {
+   font-size: 20px;
+}
+
+/* Texte mis en valeur */
+.highlight {
+   color: var(--or);
+   font-weight: bold;
+}
+
+/* Style alternatif pour bouton jaune */
+.btn-jaune {
+   background: var(--or);
+   color: black;
+   border: none;
+   padding: 12px 20px;
+   margin-top: 20px;
+   text-decoration: none;
+   display: inline-block;
+   font-weight: bold;
+   border-radius: 5px;
+   transition: background 0.3s;
+}
+
+.btn-jaune:hover {
+   background: var(--or); /* même couleur au hover */
+}
+
+/* Section infolettre avec image de fond */
+.infolettre {
+   background-image: url("/web2_finale_yasser_mariam/web2_finale_yasser_mariam/assets/images/image\ 6.png");
+   background-size: cover;
+   background-position: center;
+   padding: 60px 20px;
+   text-align: center;
+   position: relative;
+}
+
+/* Superposition foncée sur l’image */
+.overlay {
+   background-color: rgba(0, 0, 0, 0.7);
+   padding: 40px;
+   border-radius: 10px;
+   display: inline-block;
+}
+
+/* Titre de la section infolettre */
+.infolettre h2 {
+   color: #ffd700;
+   font-size: 1.8rem;
+   margin-bottom: 20px;
+}
+
+/* Champ de saisie email */
+form input[type="email"] {
+   padding: 10px;
+   font-size: 1rem;
+   margin-right: 10px;
+   border: none;
+   border-radius: 5px;
+}
+
+/* Autre bouton jaune (version "yellow-btn") */
+.yellow-btn {
+   background-color: #EBB200;
+   color: #000;
+   border: none;
+   border-radius: 20px;
+   padding: 8px 15px;
+   margin: 5px 0;
+   text-decoration: none;
+   display: inline-block;
+   transition: transform 0.2s ease-in-out;
+}
+
+/* Conteneur pour centrer un bouton jaune */
+.yellow-button-place {
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+/* Effet au hover */
+.yellow-btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0px 4px 20px #6a0dad;
+}
+
+/* Bannière violette */
+.purple-banner {
+   font-family: var(--font-principale);
+   font-size: 30px;
+   color: var(--noir);
+   background-color: #6060E5; /* violet */
+   padding: 10px 30px;
+   text-align: center;
+   letter-spacing: 1px;
+}
+
+/* ------------------------ */
+/* Media queries (écran large) */
+/* ------------------------ */
 @media (min-width: 650px) {
-    /* En-tête du site sur grand écran */
-    .site-header {
-        width: 100%;
-        padding: 0 40px;
-        height: 110px;
-    }
 
-    /* Conteneur principal prend toute la largeur */
-    main {
-        width: 100%;
-    }
+   .site-header {
+      width: 100%;
+      padding: 0 40px;
+      height: 110px;
+   }
 
-    /* Affiche la navigation desktop et la met en page */
-    .desktop-navigation {
-        display: flex; 
-        align-items: center;
-        gap: 15px; 
-        transition: background-color 0.3ease, transform 0.3ease;
-    }
+   main {
+      width: 100%;
+   }
 
-    /* Style des liens de navigation desktop */
-    .desktop-nav-item {
-        background-color: #D9D9D9;
-        color: var(--noir);
-        border: 3px solid var(--noir);
-        padding: 10px 20px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-family: var(--font-principale);
-        font-size: 18px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        line-height: 1;
-        text-align: center;
-        white-space: nowrap; 
-        flex-shrink: 0;
-    }
+   .desktop-navigation {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+   }
 
-    /* Effet au survol des liens de navigation */
-    .desktop-nav-item:hover {
-        transform: translateY(-2px); 
-        background-color: var(--blanc);
-    }
+   .desktop-nav-item {
+      background-color: #D9D9D9;
+      color: var(--noir);
+      border: 3px solid var(--noir);
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-family: var(--font-principale);
+      font-size: 18px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+   }
 
-    /* Style du lien de la page active */
-    .desktop-nav-item.current-page {
-        background-color: #D9D9D9; 
-        color: var(--noir);
-        border: 3px solid var(--noir);
-    }
+   .desktop-nav-item:hover {
+      transform: translateY(-2px);
+      background-color: var(--blanc);
+   }
 
-    /* Cache le menu burger sur Desktop */
-    .nav-icon-label {
-        display: none;
-    }
-    .burger-menu-overlay {
-        display: none !important; 
-    }
-    .burger-menu-toggle-checkbox {
-        display: none !important;
-    }
+   .desktop-nav-item.current-page {
+      background-color: #D9D9D9;
+      color: var(--noir);
+      border: 3px solid var(--noir);
+   }
 
+   .nav-icon-label,
+   .burger-menu-overlay,
+   .burger-menu-toggle-checkbox {
+      display: none !important;
+   }
 
-    /* Ajustements pour la section "À Propos" sur grand écran */
-    .a-propos-section {
-        width: 100%;
-    }
+   .a-propos-section {
+      width: 100%;
+   }
 
-    .banner-top {
-        height: 100px; 
-    }
+   .banner-yellow2 {
+      height: 100px;
+      font-size: 50px;
+   }
 
-    .banner-bottom {
-        height: 100px;
-    }
+   .banner-yellow {
+      height: 100px;
+      font-size: 60px;
+   }
 
-    /* Ajustements pour le Footer sur grand écran */
-    .site-footer-mg {
-        width: 100%;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        padding: 40px;
-        align-items: center;
-    }
+   .banner-bottom {
+      height: 100px;
+   }
 
+   .site-footer-mg {
+      width: 100%;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      padding: 40px;
+      align-items: center;
+   }
 
-    .footer-title-mg {
-        font-size: 20px;
-    }
-    .footer-button-mg {
-        font-size: 18px;
-        padding: 8px 15px;
-    }
-    /* Tailles spécifiques pour certains boutons du footer */
-    .footer-button-column-mg:first-child .footer-button-mg:nth-child(2),
-    .footer-button-column-mg:first-child .footer-button-mg:nth-child(3) {
-        font-size: 18px;
-    }
+   .footer-title-mg {
+      font-size: 20px;
+   }
 
+   .footer-button-mg {
+      font-size: 18px;
+      padding: 8px 15px;
+   }
 
-    .footer-address-mg {
-        flex-grow: 0; 
-        text-align: left;
-        padding: 0 30px;
-        font-size: 20px;
-        line-height: 1.6;
-    }
+   .footer-button-column-mg:first-child .footer-button-mg:nth-child(2),
+   .footer-button-column-mg:first-child .footer-button-mg:nth-child(3) {
+      font-size: 18px;
+   }
 
-    .footer-social-icons-mg {
-        width: 120px;
-        height: 48px;
-    }
-    .banner-top {
-    font-family: var(--font-principale);
-    font-size: 60px;
-    color: var(--noir);
-    background-color: var(--or);
-    padding: 10px 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    letter-spacing: 1px;
-}
-#searchInput {
+   .footer-address-mg {
+      flex-grow: 0;
+      text-align: left;
+      padding: 0 30px;
+      font-size: 20px;
+      line-height: 1.6;
+   }
 
-  width:1000000px;
+   .footer-social-icons-mg {
+      width: 120px;
+      height: 48px;
+   }
 
-}
+   .banner-top {
+      font-family: var(--font-principale);
+      font-size: 60px;
+      color: var(--noir);
+      background-color: var(--or);
+      padding: 10px 30px;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+   }
+
+   #searchInput {
+      width: 1000000px; /* à corriger si nécessaire */
+   }
+
+   .text {
+      font-size: 30px;
+   }
+
+   .top {
+      min-height: 400px;
+   }
+
+   .bingo p {
+      font-size: 30px;
+   }
+
+   .bingo h2 {
+      font-size: 4rem;
+   }
 }
