@@ -1,3 +1,5 @@
+/* ------------- STYLE GÉNÉRAL ------------- */
+
 :root {
     --noir: black;
     --blanc: white;
@@ -376,5 +378,59 @@ main {
     background-color: var(--blanc);
     color: var(--noir);
      border: 3px solid var(--noir);
+}
+
+
+
+/* ANIMATION DU BOUTON "ACHAT DE PUBLICITÉ */
+
+.ads-button {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Style du pseudo-élément qui créera l'effet de reflet */
+.ads-button::after {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: -75%; 
+  width: 50%; 
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation-name: shimmerEffect;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Définition des étapes clés de l'animation "shimmerEffect" */
+@keyframes shimmerEffect {
+  0% {
+    left: -75%; /* Position initiale : reflet à gauche, hors du bouton */
+    opacity: 0; 
+  }
+  10% { /* Étape 1: Apparition du reflet */
+    left: -75%;
+    opacity: 0.5;
+  }
+  30% { /* Étape 2: Mouvement du reflet */
+    left: 125%;
+    opacity: 0.5;
+  }
+  40% { /* Étape 3: Disparition du reflet */
+    left: 125%;
+    opacity: 0;
+  }
+  100% { /* Étape 4: Période de pause (invisible) */
+    left: -75%;
+    opacity: 0;
+  }
 }
 
