@@ -1936,6 +1936,7 @@ body, html {
 
     }
 
+
     /* Ajustements pour la boîte d'information sur grand écran (passage en flex row) */
      .pub-info-box {
         display: flex;

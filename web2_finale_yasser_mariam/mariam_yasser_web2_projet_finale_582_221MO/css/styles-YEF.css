@@ -151,7 +151,7 @@ main .btn-jaune {
 
 /* Style du bloc top (avec image de fond) */
 .top {
-   background-image: url(/web2_finale_yasser_mariam/web2_finale_yasser_mariam/assets/images/CIBL+bannière+officielle\ 1.jpg);
+   background-image: url(/web2_finale_yasser_mariam/mariam_yasser_web2_projet_finale_582_221MO/assets/images/CIBL+bannière+officielle\ 1.jpg);
    background-size: cover;
    background-position: center;
    min-height: 100px;
@@ -206,7 +206,7 @@ main .btn-jaune {
 
 /* Section Bingo avec image de fond */
 .bingo {
-   background-image: url("/web2_finale_yasser_mariam/web2_finale_yasser_mariam/assets/images/image\ 5\ \(1\).png");
+   background-image: url(/web2_finale_yasser_mariam/mariam_yasser_web2_projet_finale_582_221MO/assets/images/image\ 5\ \(1\).png);
    background-size: cover;
    background-position: center;
    color: white;
@@ -257,7 +257,7 @@ main .btn-jaune {
 
 /* Section infolettre avec image de fond */
 .infolettre {
-   background-image: url("/web2_finale_yasser_mariam/web2_finale_yasser_mariam/assets/images/image\ 6.png");
+   background-image: url(/web2_finale_yasser_mariam/mariam_yasser_web2_projet_finale_582_221MO/assets/images/image\ 6.png);
    background-size: cover;
    background-position: center;
    padding: 60px 20px;
