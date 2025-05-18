@@ -371,3 +371,10 @@ main {
     visibility: visible;
     transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
+
+
+ .desktop-nav-item.current-page:hover {
+    background-color: var(--blanc); 
+    color: var(--noir);
+     border: 3px solid var(--noir);
+}

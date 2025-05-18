@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIBL À Propos</title>
+    <title>CIBL Publicité et Partenariat</title>
     <link rel="stylesheet" href="css/main.css">
+    <!-- Si vous mettez tout le CSS ci-dessous dans un seul fichier, par exemple styles-MG.css -->
     <link rel="stylesheet" href="css/styles-MG.css">
 </head>
 <body>
@@ -18,14 +19,14 @@
        <nav class="desktop-navigation">
             <a href="page_accueil.html" class="desktop-nav-item">ACCUEIL</a>
             <a href="page_nos_emissions.html" class="desktop-nav-item">ÉMISSION</a>
-            <a href="page_publicite.html" class="desktop-nav-item">PUBLICITÉ</a>
-            <a href="page_a_propos.html" class="desktop-nav-item current-page">À PROPOS DE NOUS</a>
+            <a href="page_publicite.html" class="desktop-nav-item current-page">PUBLICITÉ</a>
+            <a href="page_a_propos.html" class="desktop-nav-item">À PROPOS DE NOUS</a>
         </nav>
 
         <div class="header-right">
              <img src="./assets/images/panier.png" alt="achat" class="cart-icon">
             <a href="#" class="ads-button">ACHAT DE PUBLICITÉ</a>
-            
+
             <!-- Menu Burger pour mobile -->
             <input type="checkbox" id="burger-menu-toggle" class="burger-menu-toggle-checkbox">
             <label for="burger-menu-toggle" class="nav-icon-label">
@@ -49,43 +50,136 @@
         </div>
     </header>
     <main>
-        <!-- Existing content of main (if any) -->
-
         <section class="publicite-partenariat-section">
-             <div class="publicite-banner-top">
+            <div class="publicite-banner-top">
                 <h2 class="a-propos-title">PUBLICITÉ ET PARTENARIAT</h2>
             </div>
             <h2 class="pub-subtitle">5 BONNES RAISONS DE CHOISIR CIBL :</h2>
 
             <div class="pub-reasons-container">
-                <div class="pub-reason-banner pub-reason-banner-purple">
-                    <span class="pub-reason-item-text" style="width: 343px; height: 60px;">NOTRE RAYONNEMENT +/-</span>
-             </div>
-                <div class="pub-decorator pub-purple-decorator-style1"></div>
-
-                <div class="pub-reason-banner pub-reason-banner-purple">
-                 <span class="pub-reason-item-text" style="width: 336px; height: 59px;">NOS BALADOS +/-</span>
-             </div>
-                <div class="pub-decorator pub-purple-decorator-style2"></div>
-
-                <div class="pub-reason-banner pub-reason-banner-purple">
-                 <span class="pub-reason-item-text" style="width: 402px; height: 70px;">NOS RÉSEAUX SOCIAUX +/-</span>
-                </div>
-                <div class="pub-decorator pub-purple-decorator-style2"></div> <!-- Re-using style if similar -->
-
-                <div class="pub-reason-banner pub-reason-banner-purple">
-                  <span class="pub-reason-item-text" style="width: 354px; height: 81px;">NOS AUDITRICES ET AUDITEURS +/-</span>
-             </div>
+                <!-- Raison 1 - Rayonnement Modal -->
+                <input type="checkbox" id="rayonnement-modal-toggle" class="rayonnement-modal-toggle-checkbox">
+                <label for="rayonnement-modal-toggle" class="pub-reason-item rayonnement-modal-trigger">
+                    <div class="pub-reason-banner pub-reason-banner-yellow"></div>
+                    <div class="pub-reason-text-wrapper">
+                        <span class="pub-reason-item-text">NOTRE RAYONNEMENT +/-</span>
+                    </div>
+                </label>
                 <div class="pub-decorator pub-yellow-decorator-style1"></div>
 
-                <div class="pub-reason-banner pub-reason-banner-yellow">
-                    <span class="pub-reason-item-text" style="width: 354px; height: 81px; color: #000;">PARCE QUE CIBL EST SI BELLE +/-</span>
-             </div>
-             <div class="pub-decorator pub-yellow-decorator-style2"></div>
-         </div>
+                <div class="rayonnement-modal-overlay">
+                    <div class="rayonnement-modal-content">
+                        <label for="rayonnement-modal-toggle" class="rayonnement-modal-close-btn">X</label>
+                        <p>AVEC SON ANTENNE SITUÉE AU SOMMET DE LA TOUR DE MONTRÉAL, LA<br>
+                           PLUS HAUTE TOUR INCLINÉE AU MONDE, <span class="highlight-yellow">CIBL</span> REJOINT UN AUDITOIRE<br>
+                           DE <span class="highlight-yellow">4,9 MILLIONS</span> DE PERSONNES À TRAVERS LE GRAND MONTRÉAL.</p>
+                    </div>
+                </div>
+
+                <!-- Raison 2 - Balados Modal -->
+                <input type="checkbox" id="balados-modal-toggle" class="balados-modal-toggle-checkbox">
+                <label for="balados-modal-toggle" class="pub-reason-item balados-modal-trigger">
+                    <div class="pub-reason-banner pub-reason-banner-yellow"></div>
+                    <div class="pub-reason-text-wrapper">
+                        <span class="pub-reason-item-text">NOS BALADOS +/-</span>
+                    </div>
+                </label>
+                <div class="pub-decorator pub-yellow-decorator-style1"></div>
+
+                <div class="balados-modal-overlay">
+                    <div class="balados-modal-content">
+                        <label for="balados-modal-toggle" class="balados-modal-close-btn">X</label>
+                        <p>LES ÉMISSIONS DE CIBL SONT DISPONIBLES EN BALADO AVEC<br>
+                           PLUS DE <span class="highlight-yellow">30 000 ÉCOUTES MENSUELLES</span> VIA SON SITE WEB<br>
+                           AINSI QUE LES PLATEFORMES APPLE PODCASTS, SPOTIFY ET<br>
+                           BALADOQUÉBEC.</p>
+                    </div>
+                </div>
+
+                <!-- Raison 3 - Réseaux Sociaux Modal -->
+                <input type="checkbox" id="reseaux-sociaux-modal-toggle" class="reseaux-sociaux-modal-toggle-checkbox">
+                <label for="reseaux-sociaux-modal-toggle" class="pub-reason-item reseaux-sociaux-modal-trigger">
+                    <div class="pub-reason-banner pub-reason-banner-purple"></div>
+                    <div class="pub-reason-text-wrapper">
+                        <span class="pub-reason-item-text">NOS RÉSEAUX SOCIAUX +/-</span>
+                    </div>
+                </label>
+                <div class="pub-decorator pub-purple-decorator-style2"></div>
+
+                <div class="reseaux-sociaux-modal-overlay">
+                    <div class="reseaux-sociaux-modal-content">
+                        <label for="reseaux-sociaux-modal-toggle" class="reseaux-sociaux-modal-close-btn">X</label>
+                        <p>CIBL REJOINT PLUS DE <span class="highlight-yellow">30 000 ABONNÉ.E.S</span> SUR SES RÉSEAUX<br>
+                           SOCIAUX SOIT <span class="highlight-yellow">26 450</span> SUR FACEBOOK, <span class="highlight-yellow">3 600</span> SUR INSTAGRAM<br>
+                           ET <span class="highlight-yellow">1 850</span> SUR LINKEDIN.</p>
+                    </div>
+                </div>
+
+                <!-- Raison 4 - Auditrices et Auditeurs Modal -->
+                <input type="checkbox" id="auditeurs-modal-toggle" class="auditeurs-modal-toggle-checkbox">
+                <label for="auditeurs-modal-toggle" class="pub-reason-item auditeurs-modal-trigger">
+                    <div class="pub-reason-banner pub-reason-banner-purple"></div>
+                    <div class="pub-reason-text-wrapper">
+                        <span class="pub-reason-item-text">NOS AUDITRICES ET AUDITEURS +/-</span>
+                    </div>
+                </label>
+                <div class="pub-decorator pub-purple-decorator-style2"></div>
+
+                <div class="auditeurs-modal-overlay">
+                    <div class="auditeurs-modal-content">
+                        <label for="auditeurs-modal-toggle" class="auditeurs-modal-close-btn">X</label>
+                        <p>EN PLUS D’ÊTRE BRILLANTS ET ALLUMÉS LES<br>
+                           <span class="highlight-yellow">AUDITEURS DE CIBL</span> SE COMPTENT PAR PLUSIEURS<br>
+                           <span class="highlight-yellow">MILLIERS !</span></p>
+                    </div>
+                </div>
+
+                <!-- Raison 5 - CIBL Est Si Belle Modal -->
+                <input type="checkbox" id="cibl-si-belle-modal-toggle" class="cibl-si-belle-modal-toggle-checkbox">
+                <label for="cibl-si-belle-modal-toggle" class="pub-reason-item cibl-si-belle-modal-trigger">
+                    <div class="pub-reason-banner pub-reason-banner-yellow"></div>
+                    <div class="pub-reason-text-wrapper">
+                        <span class="pub-reason-item-text pub-text-black">PARCE QUE CIBL EST SI BELLE +/-</span>
+                    </div>
+                </label>
+                <div class="pub-decorator pub-yellow-decorator-style2"></div>
+
+                <div class="cibl-si-belle-modal-overlay">
+                    <div class="cibl-si-belle-modal-content">
+                        <label for="cibl-si-belle-modal-toggle" class="cibl-si-belle-modal-close-btn">X</label>
+                        <div class="cibl-si-belle-text-container">
+                            <div class="cibl-si-belle-column">
+                                DU HAUT DE SES <span class="highlight-yellow">43 ANS</span>, LA VÉNÉRABLE<br>
+                                STATION DE <span class="highlight-yellow">RADIO FRANCOPHONE</span> DE<br>
+                                <span class="highlight-yellow">MONTRÉAL</span> FAIT PARTIE DE L’HISTOIRE DU<br>
+                                QUÉBEC MODERNE.<br>
+                                CIBL, C’EST LE BERCEAU DE <span class="highlight-yellow">PLUSIEURS</span><br>
+                                <span class="highlight-yellow">GÉNÉRATIONS</span> DE PERSONNALITÉS<br>
+                                PUBLIQUES QUI ONT FAIT LEURS PREMIERS<br>
+                                PAS SUR SES ONDES.
+                            </div>
+                            <div class="cibl-si-belle-column">
+                                CIBL, C’EST UN <span class="highlight-yellow">LIEU DE PAROLE</span>,<br>
+                                D’ÉMULATION ET D’APPRENTISSAGE POUR<br>
+                                LES PROCHAINES GÉNÉRATIONS DE<br>
+                                COMMUNICATRICES ET COMMUNICATEURS.<br>
+                                C’EST UNE VOIX, AU CŒUR DU QUARTIER<br>
+                                DES SPECTACLES, QUI ACCUEILLE LA<br>
+                                <span class="highlight-yellow">RELÈVE MUSICALE</span>, LES ARTISTES ET LES<br>
+                                CRÉATEURS ÉMERGENTS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="pub-decorator pub-yellow-decorator-style3"></div>
+
+         <div class="pub-nouveau-highlight">NOUVEAU !</div>
+
+           <div class="pub-nouveau-main-text">IL EST MAINTENANT POSSIBLE D'ACHETER VOTRE PUBLICITÉ EN LIGNE !</div>
+
             <div class="pub-info-box pub-nouveau-box">
-                <div class="pub-nouveau-highlight">NOUVEAU !</div>
-                <p class="pub-nouveau-main-text">IL EST MAINTENANT POSSIBLE D'ACHETER VOTRE PUBLICITÉ EN LIGNE !</p>
                 <p class="pub-nouveau-subtext">Rendez-vous sur notre plateforme d'achat libre-service et créez votre campagne publicitaire en sept clics!</p>
                 <a href="#" class="pub-button pub-button-purple">
                     <span class="pub-button-text">Acheter mes publicités</span>
@@ -111,20 +205,15 @@
             </div>
 
             <div class="pub-partners-logos-container">
-                <img src="./assets/images/partner_desjardins.png" alt="Logo Desjardins" class="pub-partner-logo" style="width: 296.937px; height: 77px;">
-                <img src="./assets/images/partner_quebec.png" alt="Logo Quebec" class="pub-partner-logo" style="width: 296.937px; height: 77px;">
-                <img src="./assets/images/partner_parc_olympique.png" alt="Logo Parc Olympique" class="pub-partner-logo" style="width: 296.937px; height: 77px;">
-                <img src="./assets/images/partner_investissement_quebec.png" alt="Logo Investissement Quebec" class="pub-partner-logo" style="width: 296.937px; height: 77px;">
-                <img src="./assets/images/partner_culture_communications_quebec.png" alt="Logo Culture et Communications Quebec" class="pub-partner-logo" style="width: 296.937px; height: 77px;">
-                <img src="./assets/images/partner_shanme.png" alt="Logo Shanme Design d'intérieur" class="pub-partner-logo" style="width: 296.937px; height: 77px;">
-                <!-- Add other partner logos similarly -->
+                <img src="./assets/images/desjardins.png" alt="Logo Desjardins" class="pub-partner-logo-desjardins">
+                <img src="./assets/images/gouv_quebec.png" alt="Logo Quebec" class="pub-partner-logo-quebec">
+                <img src="./assets/images/parc_olympic.png" alt="Logo Parc Olympique" class="pub-partner-logo-parc">
+                <img src="./assets/images/investissement.png" alt="Logo Investissement Quebec" class="pub-partner-logo-investissement">
+                <img src="./assets/images/ministere_culture.png" alt="Logo Culture et Communications Quebec" class="pub-partner-logo-culture">
+                <img src="./assets/images/shanme.png" alt="Logo Shanme Design d'intérieur" class="pub-partner-logo-shanme">
             </div>
 
         </section>
-        <!-- End of Publicité et Partenariat section -->
-
-        <!-- Existing content of main (if any) -->
-        
     </main>
     <div class="a-propos-banner-bottom"></div>
 

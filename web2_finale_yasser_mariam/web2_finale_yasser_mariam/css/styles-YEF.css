@@ -1,12 +1,20 @@
-main .btn-jaune{
+main .btn-jaune {
     background-color: #EBB200;
     color: #000;
     border: none;
-    box-shadow:0px 4px 20px   #6a0dad ;
+    box-shadow: 0px 4px 20px #6a0dad;
     border-radius: 20px;
     padding: 8px 15px;
     margin: 5px 0;
     text-decoration: none;
+    /* Ajoutez ceci : */
+    display: inline-block;
+    /* Optionnel : pour une transition douce */
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-jaune:hover {
+   transform: translateY(-2px);
 }
 
 .banner-top {
