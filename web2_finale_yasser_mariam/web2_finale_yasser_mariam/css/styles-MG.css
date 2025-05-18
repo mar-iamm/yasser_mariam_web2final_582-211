@@ -890,32 +890,11 @@ main {
     box-sizing: border-box;
 }
 
-
-
 }
 
 /*-------------------------------------------*/
 /* # SECTION : Publicité et Partenariat      */
 /*-------------------------------------------*/
-/*
-    This CSS block styles the "Publicité et Partenariat" (Advertising and Partnership)
-    section of the website. It includes general layout for the section,
-    prominent banners, lists of reasons or benefits (often interactive),
-    decorative elements, informational boxes with calls to action, and a display
-    area for partner logos.
-
-    A significant portion of this block is dedicated to styling multiple modal
-    pop-ups. These modals (Rayonnement, Balados, Réseaux Sociaux, Auditeurs,
-    CIBL Est Si Belle) are triggered by elements within the main section and
-    provide more detailed information. The modal styles cover the overlay,
-    content container, and close button, using a checkbox-hack for toggling
-    visibility.
-
-    The media query at the end adapts these styles for larger screens (min-width: 650px),
-    refining layouts (e.g., using CSS Grid), adjusting font sizes, and optimizing
-    the presentation of both the main section content and the modals for desktop viewing.
-*/
-
 :root {
     --or: #EBB200;
     --noir: #000000;
@@ -960,7 +939,6 @@ body, html {
     margin-bottom: 30px;
 }
 
-/* Réutilisation du style de titre (assure la cohérence si .a-propos-title est utilisé ici) */
 .a-propos-title {
     margin: 0;
     font-weight: inherit;
@@ -982,7 +960,6 @@ body, html {
     margin: 0 0 35px 0;
 }
 
-/* Conteneur pour les raisons/avantages de la publicité */
 .pub-reasons-container {
     display: flex;
     flex-direction: column;
@@ -992,7 +969,6 @@ body, html {
     max-width: 700px;
 }
 
-/* Élément individuel listant une raison/avantage */
 .pub-reason-item {
     position: relative;
     display: flex;
@@ -1000,7 +976,6 @@ body, html {
     align-items: center;
 }
 
-/* Bannière/image de fond pour un élément "raison" */
 .pub-reason-banner {
     position: absolute;
     top: 0;
@@ -1010,7 +985,6 @@ body, html {
     z-index: 1;
 }
 
-/* Conteneur pour le texte à l'intérieur d'un élément "raison" */
 .pub-reason-text-wrapper {
     position: relative;
     z-index: 2;
@@ -1023,7 +997,6 @@ body, html {
     box-sizing: border-box;
 }
 
-/* Texte d'un élément "raison" */
 .pub-reason-item-text {
     display: block;
     flex-shrink: 0;
@@ -1037,47 +1010,43 @@ body, html {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Effet de survol pour le texte d'un élément "raison" */
+/* Effet de survol */
 .pub-reason-item-text:hover {
     transform: translateY(-3px);
 }
 
-/* Élément décoratif (ligne/séparateur) */
+/* Élément décoratif */
 .pub-decorator {
     height: 10px;
     flex-shrink: 0;
     margin-bottom: 15px;
 }
 
-/* Style de décorateur jaune (style 1) */
+/* Style de décorateur */
 .pub-yellow-decorator-style1 {
     width: 279px;
     background: var(--or);
     box-shadow: 0px 0px 15px 2px var(--or);
 }
 
-/* Style de décorateur violet (style 1) */
 .pub-purple-decorator-style1 {
     width: 274px;
     background: var(--violet-cibl);
     box-shadow: 0px 0px 15px 2px var(--violet-cibl);
 }
 
-/* Style de décorateur violet (style 2) */
 .pub-purple-decorator-style2 {
     width: 358px;
     background: var(--violet-cibl);
     box-shadow: 0px 0px 15px 2px var(--violet-cibl);
 }
 
-/* Style de décorateur jaune (style 2) */
 .pub-yellow-decorator-style2 {
     width: 400px;
     background: var(--or);
     box-shadow: 0px 0px 15px 2px var(--or);
 }
 
-/* Style de décorateur jaune (style 3, potentiellement pour une section plus large) */
 .pub-yellow-decorator-style3 {
     margin-top: 200px;
     width: 550px;
@@ -1103,7 +1072,6 @@ body, html {
     gap: 25px;
 }
 
-/* Texte mis en évidence (ex: "NOUVEAU") */
 .pub-nouveau-highlight {
     color: #FFF;
     font-family: 'Staatliches', sans-serif;
@@ -1115,7 +1083,6 @@ body, html {
     margin-top: 200px;
 }
 
-/* Texte principal pour la section "NOUVEAU" */
 .pub-nouveau-main-text {
     width: 224px;
     height: 81px;
@@ -1132,7 +1099,6 @@ body, html {
     margin-bottom: 70px;
 }
 
-/* Sous-texte pour la section "NOUVEAU" */
 .pub-nouveau-subtext {
     width: 209px;
     height: 57px;
@@ -1156,7 +1122,7 @@ body, html {
     flex-shrink: 0;
 }
 
-/* Style spécifique pour un bouton violet */
+/* Style spécifique pour le bouton violet */
 .pub-button-purple {
     min-width: 122px;
     min-height: 38px;
@@ -1173,7 +1139,7 @@ body, html {
    transform: translateY(-2px);
 }
 
-/* Texte à l'intérieur d'un bouton */
+/* Texte à l'intérieur du bouton */
 .pub-button-text {
     width: 106px;
     height: 16px;
@@ -1188,13 +1154,11 @@ body, html {
     text-align: center;
 }
 
-/* Style du texte pour un bouton violet (pour remplacer la couleur par défaut) */
 .pub-button.pub-button-purple .pub-button-text {
     color: #FFF;
     text-shadow: none;
 }
 
-/* Paragraphe d'information dans la section Publicité */
 .pub-info-paragraph {
     width: 209px;
     height: 72px;
@@ -1350,7 +1314,6 @@ body, html {
     border: 3px solid var(--or, #E8B200);
 }
 
-/* Paragraphes dans le modal Rayonnement */
 .rayonnement-modal-content p {
     margin: 0;
 }
@@ -1376,7 +1339,6 @@ body, html {
     color: var(--or, #E8B200);
 }
 
-/* Affiche le modal Rayonnement quand la checkbox est cochée */
 .rayonnement-modal-toggle-checkbox:checked ~ .rayonnement-modal-overlay {
     opacity: 1;
     visibility: visible;
@@ -1398,7 +1360,6 @@ body, html {
     display: block;
 }
 
-/* Ajustement de hauteur pour le conteneur de texte du déclencheur du modal Balados */
 .pub-reason-item.balados-modal-trigger .pub-reason-text-wrapper {
     height: auto;
 }
@@ -1623,7 +1584,6 @@ body, html {
     border: 3px solid var(--or, #E8B200);
 }
 
-/* Paragraphes dans le modal Auditeurs */
 .auditeurs-modal-content p {
     margin: 0;
 }
@@ -1755,6 +1715,11 @@ body, html {
     transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
 
+/*-----------------------------------------------------------------*/
+/* # ADAPTATION PAR MEDIA QUERIES (Responsiveness) pour grands écrans pour la page publicité */
+/*-----------------------------------------------------------------*/
+
+
 @media (min-width: 650px) {
     /* Ajustements pour le conteneur des raisons sur grand écran (passage en grille) */
     .pub-reasons-container {
@@ -1806,7 +1771,7 @@ body, html {
         justify-content: flex-start;
         padding: 5px 20px;
         box-sizing: border-box;
-        margin: -40px; /* Permet un chevauchement visuel avec le décorateur */
+        margin: -40px;
         left: 20px;
     }
 
@@ -1840,7 +1805,7 @@ body, html {
     .pub-decorator {
         display: block;
         margin-right: auto;
-        margin-bottom: 30%; /* Pour créer un espace sous le texte avant le prochain item en grille */
+        margin-bottom: 30%; 
     }
 
     /* Positionnement spécifique en grille pour le modal Rayonnement et son décorateur */
@@ -1904,7 +1869,7 @@ body, html {
         width: 250px;
     }
 
-   .balados-modal-trigger + .pub-decorator { /* Décorateur spécifique pour Balados */
+   .balados-modal-trigger + .pub-decorator {
         width: 190px;
     }
 
@@ -1912,15 +1877,15 @@ body, html {
         width: 260px;
     }
 
-    .reseaux-sociaux-modal-trigger + .pub-decorator { /* Décorateur spécifique pour Réseaux Sociaux */
+    .reseaux-sociaux-modal-trigger + .pub-decorator { 
         width: 280px;
     }
 
-    .auditeurs-modal-trigger + .pub-decorator { /* Décorateur spécifique pour Auditeurs */
+    .auditeurs-modal-trigger + .pub-decorator {
         width: 380px;
     }
 
-    .cibl-si-belle-modal-trigger + .pub-decorator { /* Décorateur spécifique pour CIBL Est Si Belle */
+    .cibl-si-belle-modal-trigger + .pub-decorator { 
         width: 350px;
     }
 
@@ -1985,8 +1950,8 @@ body, html {
         margin-right: auto;
         margin-top: 0;
         margin-bottom: 100px;
-        border: none; /* Suppression de la bordure par défaut sur grand écran */
-        box-shadow: none; /* Suppression de l'ombre par défaut sur grand écran */
+        border: none;
+        box-shadow: none; 
     }
 
     /* Style des paragraphes dans la boîte d'information sur grand écran */
@@ -2006,8 +1971,8 @@ body, html {
         font-size: 25px;
         line-height: 1.4;
         color: var(--blanc);
-        width: auto !important; /* Assurer que la largeur s'ajuste */
-        height: auto !important; /* Assurer que la hauteur s'ajuste */
+        width: auto !important; 
+        height: auto !important; 
     }
 
     /* Ajustements de police pour les textes "NOUVEAU" et paragraphes d'info sur grand écran */
@@ -2026,7 +1991,7 @@ body, html {
         max-width: 250px;
         width: auto;
         min-width: 100px;
-        height: 10px; /* Semble être une typo, probablement min-height? ou height:auto; */
+        height: 10px; 
         min-height: 70px;
         padding: 10px 15px;
         display: flex;
@@ -2039,7 +2004,7 @@ body, html {
     .pub-info-box .pub-button-text {
         font-size: 20px;
         line-height: 1.3;
-        white-space: normal; /* Permet au texte de passer à la ligne */
+        white-space: normal; 
         text-align: center;
         width: auto;
         height: auto;
@@ -2049,7 +2014,7 @@ body, html {
 
     /* Couleur de fond au survol pour le bouton violet sur grand écran */
     .pub-button-purple:hover {
-        background-color: #3838CC; /* Couleur plus foncée au survol */
+        background-color: #3838CC; 
     }
 
     /* Augmentation de la taille de la police pour le titre des partenaires sur grand écran */
@@ -2084,10 +2049,10 @@ body, html {
         width: 100%;
         height: 140px;
         object-fit: contain;
-        background-color: #fff; /* Fond blanc pour les logos */
+        background-color: #fff; 
         padding: 15px;
         box-sizing: border-box;
-        flex-shrink: unset; /* Permet à l'image de ne pas rétrécir si l'espace manque en grille */
+        flex-shrink: unset; 
     }
 
     /* Ajustement du padding pour la section Publicité et Partenariat sur grand écran */
